@@ -7,6 +7,7 @@ namespace Комплектация_автомибиля
         public Menu()
         {
             InitializeComponent();
+            BaseStart();
             Model.SelectedIndex = 0;
         }
 
@@ -20,6 +21,15 @@ namespace Комплектация_автомибиля
                             OptionFogLightsPrice = 0.05f,
                             OptionPartronikPrice = 0.11f,
                             OptionLeatherInteriorPrice = 0.18f;
+
+        private void BaseStart()
+        {
+            OptionABC.Checked = false;
+            OptionFogLights.Checked = false;
+            OptionPartronik.Checked = false;
+            OptionLeatherInterior.Checked = false;
+            Price.Text = string.Empty;
+        }
 
         private string CarPrice(uint Price)
         {
@@ -84,20 +94,6 @@ namespace Комплектация_автомибиля
             }
         }
 
-        private void Background_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                this.Left += e.X - lastPoint.X;
-                this.Top += e.Y - lastPoint.Y;
-            }
-        }
-
-        private void Background_MouseDown(object sender, MouseEventArgs e)
-        {
-            lastPoint = new Point(e.X, e.Y);
-        }
-
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -117,7 +113,22 @@ namespace Комплектация_автомибиля
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
+            BaseStart();
             Price.Text = string.Empty;
+        }
+
+        private void Background_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
+        }
+
+        private void Background_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
         }
     }
 }

@@ -75,8 +75,9 @@
             // 
             // ClearButton
             // 
+            this.ClearButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClearButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ClearButton.Location = new System.Drawing.Point(575, 504);
+            this.ClearButton.Location = new System.Drawing.Point(637, 504);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(177, 46);
             this.ClearButton.TabIndex = 16;
@@ -86,8 +87,9 @@
             // 
             // CalculateButton
             // 
+            this.CalculateButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CalculateButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CalculateButton.Location = new System.Drawing.Point(62, 504);
+            this.CalculateButton.Location = new System.Drawing.Point(118, 504);
             this.CalculateButton.Name = "CalculateButton";
             this.CalculateButton.Size = new System.Drawing.Size(177, 46);
             this.CalculateButton.TabIndex = 15;
@@ -126,6 +128,7 @@
             // OptionLeatherInterior
             // 
             this.OptionLeatherInterior.AutoSize = true;
+            this.OptionLeatherInterior.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OptionLeatherInterior.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.OptionLeatherInterior.Location = new System.Drawing.Point(71, 426);
             this.OptionLeatherInterior.Name = "OptionLeatherInterior";
@@ -137,6 +140,7 @@
             // OptionPartronik
             // 
             this.OptionPartronik.AutoSize = true;
+            this.OptionPartronik.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OptionPartronik.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.OptionPartronik.Location = new System.Drawing.Point(71, 395);
             this.OptionPartronik.Name = "OptionPartronik";
@@ -148,6 +152,7 @@
             // OptionFogLights
             // 
             this.OptionFogLights.AutoSize = true;
+            this.OptionFogLights.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OptionFogLights.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.OptionFogLights.Location = new System.Drawing.Point(71, 364);
             this.OptionFogLights.Name = "OptionFogLights";
@@ -159,6 +164,7 @@
             // OptionABC
             // 
             this.OptionABC.AutoSize = true;
+            this.OptionABC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OptionABC.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.OptionABC.Location = new System.Drawing.Point(71, 333);
             this.OptionABC.Name = "OptionABC";
@@ -189,6 +195,7 @@
             // 
             // Model
             // 
+            this.Model.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Model.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Model.FormattingEnabled = true;
             this.Model.Items.AddRange(new object[] {

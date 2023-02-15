@@ -71,6 +71,7 @@
             // 
             // ClearButton
             // 
+            this.ClearButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClearButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ClearButton.Location = new System.Drawing.Point(594, 476);
             this.ClearButton.Name = "ClearButton";
@@ -82,6 +83,7 @@
             // 
             // CalculateButton
             // 
+            this.CalculateButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CalculateButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CalculateButton.Location = new System.Drawing.Point(170, 476);
             this.CalculateButton.Name = "CalculateButton";
@@ -144,6 +146,7 @@
             // TypeNegative
             // 
             this.TypeNegative.AutoSize = true;
+            this.TypeNegative.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TypeNegative.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TypeNegative.Location = new System.Drawing.Point(6, 138);
             this.TypeNegative.Name = "TypeNegative";
@@ -156,6 +159,7 @@
             // TypeColored
             // 
             this.TypeColored.AutoSize = true;
+            this.TypeColored.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TypeColored.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TypeColored.Location = new System.Drawing.Point(6, 96);
             this.TypeColored.Name = "TypeColored";
@@ -168,6 +172,7 @@
             // TypeBlackWhite
             // 
             this.TypeBlackWhite.AutoSize = true;
+            this.TypeBlackWhite.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TypeBlackWhite.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TypeBlackWhite.Location = new System.Drawing.Point(6, 55);
             this.TypeBlackWhite.Name = "TypeBlackWhite";
@@ -194,6 +199,7 @@
             // Size18x24
             // 
             this.Size18x24.AutoSize = true;
+            this.Size18x24.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Size18x24.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Size18x24.Location = new System.Drawing.Point(6, 138);
             this.Size18x24.Name = "Size18x24";
@@ -206,6 +212,7 @@
             // Size12x15
             // 
             this.Size12x15.AutoSize = true;
+            this.Size12x15.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Size12x15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Size12x15.Location = new System.Drawing.Point(6, 107);
             this.Size12x15.Name = "Size12x15";
@@ -218,6 +225,7 @@
             // Size9x12
             // 
             this.Size9x12.AutoSize = true;
+            this.Size9x12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Size9x12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Size9x12.Location = new System.Drawing.Point(6, 76);
             this.Size9x12.Name = "Size9x12";
@@ -230,6 +238,7 @@
             // Size3x4
             // 
             this.Size3x4.AutoSize = true;
+            this.Size3x4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Size3x4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Size3x4.Location = new System.Drawing.Point(6, 45);
             this.Size3x4.Name = "Size3x4";
@@ -253,14 +262,14 @@
             this.ExitButton.MouseEnter += new System.EventHandler(this.ExitButton_MouseEnter);
             this.ExitButton.MouseLeave += new System.EventHandler(this.ExitButton_MouseLeave);
             // 
-            // Menu
+            // Photo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.Background);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Menu";
+            this.Name = "Photo";
             this.Background.ResumeLayout(false);
             this.Background.PerformLayout();
             this.TypeBox.ResumeLayout(false);

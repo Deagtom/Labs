@@ -35,9 +35,9 @@
             this.PriceLabel = new System.Windows.Forms.Label();
             this.Material = new System.Windows.Forms.ComboBox();
             this.MaterialLabel = new System.Windows.Forms.Label();
-            this.Height = new System.Windows.Forms.TextBox();
+            this.HeightValue = new System.Windows.Forms.TextBox();
             this.HeightLabel = new System.Windows.Forms.Label();
-            this.Width = new System.Windows.Forms.TextBox();
+            this.WidthValue = new System.Windows.Forms.TextBox();
             this.WidthLabel = new System.Windows.Forms.Label();
             this.TypeBox = new System.Windows.Forms.GroupBox();
             this.TypeMosaic = new System.Windows.Forms.RadioButton();
@@ -57,9 +57,9 @@
             this.Background.Controls.Add(this.PriceLabel);
             this.Background.Controls.Add(this.Material);
             this.Background.Controls.Add(this.MaterialLabel);
-            this.Background.Controls.Add(this.Height);
+            this.Background.Controls.Add(this.HeightValue);
             this.Background.Controls.Add(this.HeightLabel);
-            this.Background.Controls.Add(this.Width);
+            this.Background.Controls.Add(this.WidthValue);
             this.Background.Controls.Add(this.WidthLabel);
             this.Background.Controls.Add(this.TypeBox);
             this.Background.Controls.Add(this.ExitButton);
@@ -73,6 +73,7 @@
             // 
             // ClearButton
             // 
+            this.ClearButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClearButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ClearButton.Location = new System.Drawing.Point(625, 500);
             this.ClearButton.Name = "ClearButton";
@@ -84,6 +85,7 @@
             // 
             // CalculateButton
             // 
+            this.CalculateButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CalculateButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CalculateButton.Location = new System.Drawing.Point(201, 500);
             this.CalculateButton.Name = "CalculateButton";
@@ -137,11 +139,11 @@
             // 
             // Height
             // 
-            this.Height.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Height.Location = new System.Drawing.Point(201, 209);
-            this.Height.Name = "Height";
-            this.Height.Size = new System.Drawing.Size(172, 43);
-            this.Height.TabIndex = 8;
+            this.HeightValue.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HeightValue.Location = new System.Drawing.Point(201, 209);
+            this.HeightValue.Name = "Height";
+            this.HeightValue.Size = new System.Drawing.Size(172, 43);
+            this.HeightValue.TabIndex = 8;
             // 
             // HeightLabel
             // 
@@ -155,11 +157,11 @@
             // 
             // Width
             // 
-            this.Width.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Width.Location = new System.Drawing.Point(201, 142);
-            this.Width.Name = "Width";
-            this.Width.Size = new System.Drawing.Size(172, 43);
-            this.Width.TabIndex = 6;
+            this.WidthValue.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.WidthValue.Location = new System.Drawing.Point(201, 142);
+            this.WidthValue.Name = "Width";
+            this.WidthValue.Size = new System.Drawing.Size(172, 43);
+            this.WidthValue.TabIndex = 6;
             // 
             // WidthLabel
             // 
@@ -188,6 +190,7 @@
             // TypeMosaic
             // 
             this.TypeMosaic.AutoSize = true;
+            this.TypeMosaic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TypeMosaic.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TypeMosaic.Location = new System.Drawing.Point(6, 138);
             this.TypeMosaic.Name = "TypeMosaic";
@@ -200,6 +203,7 @@
             // TypeRolled
             // 
             this.TypeRolled.AutoSize = true;
+            this.TypeRolled.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TypeRolled.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TypeRolled.Location = new System.Drawing.Point(6, 107);
             this.TypeRolled.Name = "TypeRolled";
@@ -212,6 +216,7 @@
             // TypeVertical
             // 
             this.TypeVertical.AutoSize = true;
+            this.TypeVertical.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TypeVertical.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TypeVertical.Location = new System.Drawing.Point(6, 76);
             this.TypeVertical.Name = "TypeVertical";
@@ -224,6 +229,7 @@
             // TypeHorizontal
             // 
             this.TypeHorizontal.AutoSize = true;
+            this.TypeHorizontal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TypeHorizontal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TypeHorizontal.Location = new System.Drawing.Point(6, 45);
             this.TypeHorizontal.Name = "TypeHorizontal";
@@ -273,9 +279,9 @@
         private RadioButton TypeVertical;
         private RadioButton TypeHorizontal;
         private Label MaterialLabel;
-        private TextBox Height;
+        private TextBox HeightValue;
         private Label HeightLabel;
-        private TextBox Width;
+        private TextBox WidthValue;
         private Label WidthLabel;
         private ComboBox Material;
         private TextBox Price;
