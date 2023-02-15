@@ -89,6 +89,7 @@
             // 
             // LovedDrinkables
             // 
+            this.LovedDrinkables.AllowDrop = true;
             this.LovedDrinkables.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LovedDrinkables.FormattingEnabled = true;
             this.LovedDrinkables.ItemHeight = 21;
@@ -96,9 +97,13 @@
             this.LovedDrinkables.Name = "LovedDrinkables";
             this.LovedDrinkables.Size = new System.Drawing.Size(225, 340);
             this.LovedDrinkables.TabIndex = 4;
+            this.LovedDrinkables.DragDrop += new System.Windows.Forms.DragEventHandler(this.Drinkables_DragDrop);
+            this.LovedDrinkables.DragEnter += new System.Windows.Forms.DragEventHandler(this.Drinkables_DragEnter);
+            this.LovedDrinkables.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Drinkables_MouseDown);
             // 
             // Drinkables
             // 
+            this.Drinkables.AllowDrop = true;
             this.Drinkables.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Drinkables.FormattingEnabled = true;
             this.Drinkables.ItemHeight = 21;
@@ -106,9 +111,13 @@
             this.Drinkables.Name = "Drinkables";
             this.Drinkables.Size = new System.Drawing.Size(225, 361);
             this.Drinkables.TabIndex = 5;
+            this.Drinkables.DragDrop += new System.Windows.Forms.DragEventHandler(this.Drinkables_DragDrop);
+            this.Drinkables.DragEnter += new System.Windows.Forms.DragEventHandler(this.Drinkables_DragEnter);
+            this.Drinkables.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Drinkables_MouseDown);
             // 
             // UnlovedDrinkables
             // 
+            this.UnlovedDrinkables.AllowDrop = true;
             this.UnlovedDrinkables.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.UnlovedDrinkables.FormattingEnabled = true;
             this.UnlovedDrinkables.ItemHeight = 21;
@@ -116,6 +125,9 @@
             this.UnlovedDrinkables.Name = "UnlovedDrinkables";
             this.UnlovedDrinkables.Size = new System.Drawing.Size(225, 340);
             this.UnlovedDrinkables.TabIndex = 6;
+            this.UnlovedDrinkables.DragDrop += new System.Windows.Forms.DragEventHandler(this.Drinkables_DragDrop);
+            this.UnlovedDrinkables.DragEnter += new System.Windows.Forms.DragEventHandler(this.Drinkables_DragEnter);
+            this.UnlovedDrinkables.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Drinkables_MouseDown);
             // 
             // Background
             // 

@@ -149,6 +149,37 @@ namespace Любимые_напитки
             }
         }
 
+        private void Drinkables_DragDrop(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+            string receivedText = (string)e.Data.GetData(DataFormats.Text);
+            if (receivedText != string.Empty && ((Control)sender).Text != receivedText)
+            {
+                ((Control)sender).Text = receivedText;
+            }
+        }
+
+        private void Drinkables_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Text))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void Drinkables_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (sender is not Button)
+            {
+                string st = ((Control)sender).Text;
+                (sender as Control).DoDragDrop(st, DragDropEffects.Copy | DragDropEffects.Move);
+            }
+        }
+
         private void Background_MouseDown(object sender, MouseEventArgs e)
         {
             lastPoint = new Point(e.X, e.Y);
