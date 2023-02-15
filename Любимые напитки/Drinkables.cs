@@ -140,16 +140,6 @@ namespace Любимые_напитки
             Application.Exit();
         }
 
-        private void Drinkables_DragDrop(object sender, DragEventArgs e)
-        {
-            e.Effect = DragDropEffects.Copy;
-            string receivedText = (string)e.Data.GetData(DataFormats.Text);
-            if (receivedText != string.Empty && ((Control)sender).Text != receivedText)
-            {
-                ((Control)sender).Text = receivedText;
-            }
-        }
-
         private void Drinkables_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.Text))
@@ -162,12 +152,60 @@ namespace Любимые_напитки
             }
         }
 
+        private void Drinkables_DragDrop(object sender, DragEventArgs e)
+        {
+            Drinkables.Items.Add(e.Data.GetData(DataFormats.Text));
+            LovedDrinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
+            UnlovedDrinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
+        }
+
+        private void LovedDrinkables_DragDrop(object sender, DragEventArgs e)
+        {
+            LovedDrinkables.Items.Add(e.Data.GetData(DataFormats.Text));
+            Drinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
+            UnlovedDrinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
+        }
+
+        private void UnlovedDrinkables_DragDrop(object sender, DragEventArgs e)
+        {
+            UnlovedDrinkables.Items.Add(e.Data.GetData(DataFormats.Text));
+            Drinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
+            LovedDrinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
+        }
+
         private void Drinkables_MouseDown(object sender, MouseEventArgs e)
         {
-            if (sender is not Button)
+            try
             {
-                string st = ((Control)sender).Text;
-                (sender as Control).DoDragDrop(st, DragDropEffects.Copy | DragDropEffects.Move);
+                Drinkables.DoDragDrop(Drinkables.SelectedItem.ToString(), DragDropEffects.Copy);
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void LovedDrinkables_MouseDown(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                LovedDrinkables.DoDragDrop(LovedDrinkables.SelectedItem.ToString(), DragDropEffects.Copy);
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void UnlovedDrinkables_MouseDown(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                UnlovedDrinkables.DoDragDrop(UnlovedDrinkables.SelectedItem.ToString(), DragDropEffects.Copy);
+            }
+            catch
+            {
+
             }
         }
 

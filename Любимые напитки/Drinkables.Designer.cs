@@ -97,9 +97,9 @@
             this.LovedDrinkables.Name = "LovedDrinkables";
             this.LovedDrinkables.Size = new System.Drawing.Size(225, 340);
             this.LovedDrinkables.TabIndex = 4;
-            this.LovedDrinkables.DragDrop += new System.Windows.Forms.DragEventHandler(this.Drinkables_DragDrop);
+            this.LovedDrinkables.DragDrop += new System.Windows.Forms.DragEventHandler(this.LovedDrinkables_DragDrop);
             this.LovedDrinkables.DragEnter += new System.Windows.Forms.DragEventHandler(this.Drinkables_DragEnter);
-            this.LovedDrinkables.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Drinkables_MouseDown);
+            this.LovedDrinkables.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LovedDrinkables_MouseDown);
             // 
             // Drinkables
             // 
@@ -125,9 +125,9 @@
             this.UnlovedDrinkables.Name = "UnlovedDrinkables";
             this.UnlovedDrinkables.Size = new System.Drawing.Size(225, 340);
             this.UnlovedDrinkables.TabIndex = 6;
-            this.UnlovedDrinkables.DragDrop += new System.Windows.Forms.DragEventHandler(this.Drinkables_DragDrop);
+            this.UnlovedDrinkables.DragDrop += new System.Windows.Forms.DragEventHandler(this.UnlovedDrinkables_DragDrop);
             this.UnlovedDrinkables.DragEnter += new System.Windows.Forms.DragEventHandler(this.Drinkables_DragEnter);
-            this.UnlovedDrinkables.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Drinkables_MouseDown);
+            this.UnlovedDrinkables.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UnlovedDrinkables_MouseDown);
             // 
             // Background
             // 
