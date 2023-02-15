@@ -5,20 +5,27 @@ namespace Жалюзи
         public Menu()
         {
             InitializeComponent();
-            TypeHorizontal.Checked = true;
-            Material.SelectedIndex = 0;
+            BaseStart();
         }
 
         private Point lastPoint;
 
         private const uint MaterialAluminumPrice = 3,
-                   MaterialIronPrice = 4,
-                   MaterialPlasticPrice = 2;
+                           MaterialIronPrice = 4,
+                           MaterialPlasticPrice = 2;
 
         private const uint TypeHorizontalPrice = 2,
-                   TypeVerticalPrice = 3,
-                   TypeRolledPrice = 4,
-                   TypeMosaicPrice = 5;
+                           TypeVerticalPrice = 3,
+                           TypeRolledPrice = 4,
+                           TypeMosaicPrice = 5;
+
+        private void BaseStart()
+        {
+            TypeHorizontal.Checked = true;
+            Material.SelectedIndex = 0;
+            Width.Text = "0";
+            Height.Text = "0";
+        }
 
         private string BlindsPrice(uint Type)
         {
@@ -98,6 +105,7 @@ namespace Жалюзи
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
+            BaseStart();
             Price.Text = string.Empty;
         }
     }

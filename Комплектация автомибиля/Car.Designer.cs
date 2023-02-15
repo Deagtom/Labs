@@ -76,7 +76,7 @@
             // ClearButton
             // 
             this.ClearButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ClearButton.Location = new System.Drawing.Point(575, 504);
+            this.ClearButton.Location = new System.Drawing.Point(637, 504);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(177, 46);
             this.ClearButton.TabIndex = 16;
@@ -87,7 +87,7 @@
             // CalculateButton
             // 
             this.CalculateButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CalculateButton.Location = new System.Drawing.Point(62, 504);
+            this.CalculateButton.Location = new System.Drawing.Point(118, 504);
             this.CalculateButton.Name = "CalculateButton";
             this.CalculateButton.Size = new System.Drawing.Size(177, 46);
             this.CalculateButton.TabIndex = 15;
