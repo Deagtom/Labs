@@ -161,31 +161,7 @@ namespace Любимые_напитки
         private void Drinkables_DragDrop(object sender, DragEventArgs e)
         {
             ListBox listFor = (ListBox)sender;
-            if (Drinkables.SelectedItems.Count == 0)
-            {
-                Drinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
-                LovedDrinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
-                UnlovedDrinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
-                listFor.Items.Add(e.Data.GetData(DataFormats.Text));
-            }
-        }
-
-        private void LovedDrinkables_DragDrop(object sender, DragEventArgs e)
-        {
-            ListBox listFor = (ListBox)sender;
-            if (LovedDrinkables.SelectedItems.Count == 0)
-            {
-                Drinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
-                LovedDrinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
-                UnlovedDrinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
-                listFor.Items.Add(e.Data.GetData(DataFormats.Text));
-            }
-        }
-
-        private void UnlovedDrinkables_DragDrop(object sender, DragEventArgs e)
-        {
-            ListBox listFor = (ListBox)sender;
-            if (UnlovedDrinkables.SelectedItems.Count == 0)
+            if (listFor.SelectedItems.Count == 0)
             {
                 Drinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
                 LovedDrinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
