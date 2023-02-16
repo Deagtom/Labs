@@ -123,7 +123,7 @@ namespace Любимые_напитки
             StreamWriter writerLoved = new(lovedDrinkables);
             foreach (string item in LovedDrinkables.Items)
             {
-                if (item != string.Empty && item != null)
+                if (item != string.Empty)
                 {
                     writerLoved.WriteLine(item);
                 }
@@ -133,7 +133,7 @@ namespace Любимые_напитки
             StreamWriter writerUnloved = new(unlovedDrinkables);
             foreach (string item in UnlovedDrinkables.Items)
             {
-                if (item != string.Empty && item != null)
+                if (item != string.Empty)
                 {
                     writerUnloved.WriteLine(item);
                 }
