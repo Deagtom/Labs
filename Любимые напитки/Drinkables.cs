@@ -1,3 +1,5 @@
+using System;
+using System.Windows.Forms;
 using Любимые_напитки.Properties;
 
 namespace Любимые_напитки
@@ -196,6 +198,7 @@ namespace Любимые_напитки
 
         private void Drinkables_MouseDown(object sender, MouseEventArgs e)
         {
+            Index index = ^1;
             ListBox listFrom = (ListBox)sender;
             ListBox listFor = new();
             try
@@ -204,7 +207,7 @@ namespace Любимые_напитки
             }
             catch (NullReferenceException)
             {
-                
+                listFrom.SetSelected(listFrom.Items.Count - 1, true);
                 listFor.DoDragDrop(listFrom.Items[^1].ToString(), DragDropEffects.Copy);
             }
         }
