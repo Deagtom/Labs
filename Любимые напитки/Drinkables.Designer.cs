@@ -71,7 +71,7 @@
             // 
             this.LovedLabel.AutoSize = true;
             this.LovedLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LovedLabel.Location = new System.Drawing.Point(105, 54);
+            this.LovedLabel.Location = new System.Drawing.Point(94, 54);
             this.LovedLabel.Name = "LovedLabel";
             this.LovedLabel.Size = new System.Drawing.Size(101, 25);
             this.LovedLabel.TabIndex = 2;
@@ -81,7 +81,7 @@
             // 
             this.UnlovedLabel.AutoSize = true;
             this.UnlovedLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.UnlovedLabel.Location = new System.Drawing.Point(796, 54);
+            this.UnlovedLabel.Location = new System.Drawing.Point(780, 54);
             this.UnlovedLabel.Name = "UnlovedLabel";
             this.UnlovedLabel.Size = new System.Drawing.Size(123, 25);
             this.UnlovedLabel.TabIndex = 3;

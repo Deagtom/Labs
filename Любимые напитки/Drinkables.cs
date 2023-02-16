@@ -206,8 +206,11 @@ namespace Любимые_напитки
             }
             catch (NullReferenceException)
             {
-                listFrom.SetSelected(listFrom.Items.Count - 1, true);
-                listFor.DoDragDrop(listFrom.Items[^1].ToString(), DragDropEffects.Copy);
+                if (listFrom.Items.Count > 0)
+                {
+                    listFrom.SetSelected(listFrom.Items.Count - 1, true);
+                    listFor.DoDragDrop(listFrom.Items[^1].ToString(), DragDropEffects.Copy);
+                }
             }
         }
 
