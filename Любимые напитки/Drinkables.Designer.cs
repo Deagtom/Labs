@@ -99,7 +99,7 @@
             this.LovedDrinkables.TabIndex = 4;
             this.LovedDrinkables.DragDrop += new System.Windows.Forms.DragEventHandler(this.LovedDrinkables_DragDrop);
             this.LovedDrinkables.DragEnter += new System.Windows.Forms.DragEventHandler(this.Drinkables_DragEnter);
-            this.LovedDrinkables.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LovedDrinkables_MouseDown);
+            this.LovedDrinkables.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Drinkables_MouseDown);
             // 
             // Drinkables
             // 
@@ -127,7 +127,7 @@
             this.UnlovedDrinkables.TabIndex = 6;
             this.UnlovedDrinkables.DragDrop += new System.Windows.Forms.DragEventHandler(this.UnlovedDrinkables_DragDrop);
             this.UnlovedDrinkables.DragEnter += new System.Windows.Forms.DragEventHandler(this.Drinkables_DragEnter);
-            this.UnlovedDrinkables.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UnlovedDrinkables_MouseDown);
+            this.UnlovedDrinkables.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Drinkables_MouseDown);
             // 
             // Background
             // 

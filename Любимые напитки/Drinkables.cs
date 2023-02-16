@@ -31,7 +31,7 @@ namespace Любимые_напитки
                 }
                 foreach (string item in lovedDrinkablesList)
                 {
-                    if (item != string.Empty && item != null)
+                    if (item != string.Empty)
                     {
                         LovedDrinkables.Items.Add(item);
                     }
@@ -52,7 +52,7 @@ namespace Любимые_напитки
                 }
                 foreach (string item in unlovedDrinkablesList)
                 {
-                    if (item != string.Empty && item != null)
+                    if (item != string.Empty)
                     {
                         UnlovedDrinkables.Items.Add(item);
                     }
@@ -67,8 +67,14 @@ namespace Любимые_напитки
 
         private void DrinkablesList()
         {
-            string[] drinkablesArray = drinkables.Split('\r');
-            foreach (string item in drinkablesArray)
+            string[] drinkablesArray = drinkables.Split('\n', '\r');
+            List<string> drinkablesList = new();
+            foreach (string drinkable in drinkablesArray)
+            {
+                drinkablesList.Add(drinkable);
+            }
+            drinkablesList.RemoveAll(x => x == "");
+            foreach (string item in drinkablesList)
             {
                if (!LovedDrinkables.Items.Contains(item) && !UnlovedDrinkables.Items.Contains(item))
                 {
@@ -154,58 +160,52 @@ namespace Любимые_напитки
 
         private void Drinkables_DragDrop(object sender, DragEventArgs e)
         {
-            Drinkables.Items.Add(e.Data.GetData(DataFormats.Text));
-            LovedDrinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
-            UnlovedDrinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
+            ListBox listFor = (ListBox)sender;
+            if (Drinkables.SelectedItems.Count == 0)
+            {
+                Drinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
+                LovedDrinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
+                UnlovedDrinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
+                listFor.Items.Add(e.Data.GetData(DataFormats.Text));
+            }
         }
 
         private void LovedDrinkables_DragDrop(object sender, DragEventArgs e)
         {
-            LovedDrinkables.Items.Add(e.Data.GetData(DataFormats.Text));
-            Drinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
-            UnlovedDrinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
+            ListBox listFor = (ListBox)sender;
+            if (LovedDrinkables.SelectedItems.Count == 0)
+            {
+                Drinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
+                LovedDrinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
+                UnlovedDrinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
+                listFor.Items.Add(e.Data.GetData(DataFormats.Text));
+            }
         }
 
         private void UnlovedDrinkables_DragDrop(object sender, DragEventArgs e)
         {
-            UnlovedDrinkables.Items.Add(e.Data.GetData(DataFormats.Text));
-            Drinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
-            LovedDrinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
+            ListBox listFor = (ListBox)sender;
+            if (UnlovedDrinkables.SelectedItems.Count == 0)
+            {
+                Drinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
+                LovedDrinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
+                UnlovedDrinkables.Items.Remove(e.Data.GetData(DataFormats.Text));
+                listFor.Items.Add(e.Data.GetData(DataFormats.Text));
+            }
         }
 
         private void Drinkables_MouseDown(object sender, MouseEventArgs e)
         {
+            ListBox listFrom = (ListBox)sender;
+            ListBox listFor = new();
             try
             {
-                Drinkables.DoDragDrop(Drinkables.SelectedItem.ToString(), DragDropEffects.Copy);
+                listFor.DoDragDrop(listFrom.SelectedItem.ToString(), DragDropEffects.Copy);
             }
-            catch
+            catch (NullReferenceException)
             {
-
-            }
-        }
-
-        private void LovedDrinkables_MouseDown(object sender, MouseEventArgs e)
-        {
-            try
-            {
-                LovedDrinkables.DoDragDrop(LovedDrinkables.SelectedItem.ToString(), DragDropEffects.Copy);
-            }
-            catch
-            {
-
-            }
-        }
-
-        private void UnlovedDrinkables_MouseDown(object sender, MouseEventArgs e)
-        {
-            try
-            {
-                UnlovedDrinkables.DoDragDrop(UnlovedDrinkables.SelectedItem.ToString(), DragDropEffects.Copy);
-            }
-            catch
-            {
-
+                
+                listFor.DoDragDrop(listFrom.Items[^1].ToString(), DragDropEffects.Copy);
             }
         }
 
