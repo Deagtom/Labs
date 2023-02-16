@@ -1,5 +1,3 @@
-using System;
-using System.Windows.Forms;
 using Любимые_напитки.Properties;
 
 namespace Любимые_напитки
