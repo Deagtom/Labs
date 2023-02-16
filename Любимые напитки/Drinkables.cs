@@ -198,7 +198,6 @@ namespace Любимые_напитки
 
         private void Drinkables_MouseDown(object sender, MouseEventArgs e)
         {
-            Index index = ^1;
             ListBox listFrom = (ListBox)sender;
             ListBox listFor = new();
             try
