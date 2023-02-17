@@ -13,9 +13,9 @@ namespace Любимые_напитки
 
         private Point lastPoint;
 
-        private readonly string drinkables = Resources.DrinkablesText;
-        private readonly string lovedDrinkables = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "loved drinkables.txt");
-        private readonly string unlovedDrinkables = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "unloved drinkables.txt");
+        private readonly string drinkables = Resources.DrinkablesText,
+                                lovedDrinkables = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "loved drinkables.txt"),
+                                unlovedDrinkables = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "unloved drinkables.txt");
 
         private readonly List<string> lovedDrinkablesList = new(),
                                       unlovedDrinkablesList = new();

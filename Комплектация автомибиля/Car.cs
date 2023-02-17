@@ -13,20 +13,20 @@ namespace Комплектация_автомибиля
 
         private Point lastPoint;
 
-        private const uint KiaPrice = 1650000,
-                           BMWPrice = 6200000,
-                           MercedesPrice = 8500000;
+        private const uint KIA_PRICE = 1650000,
+                           BMW_PRICE = 6200000,
+                           MERCEDES_PRICE = 8500000;
 
-        private const float OptionABCPrice = 0.13f,
-                            OptionFogLightsPrice = 0.05f,
-                            OptionPartronikPrice = 0.11f,
-                            OptionLeatherInteriorPrice = 0.18f;
+        private const float OPTION_ABC_PRICE = 0.13f,
+                            OPTION_FOG_LIGHTS_PRICE = 0.05f,
+                            OPTION_PARKTRONIK_PRICE = 0.11f,
+                            OPTION_LEATHER_INTERIOR_PRICE = 0.18f;
 
         private void BaseStart()
         {
             OptionABC.Checked = false;
             OptionFogLights.Checked = false;
-            OptionPartronik.Checked = false;
+            OptionParktronik.Checked = false;
             OptionLeatherInterior.Checked = false;
             Price.Text = string.Empty;
         }
@@ -36,19 +36,19 @@ namespace Комплектация_автомибиля
             double result = Price;
             if (OptionABC.Checked)
             {
-                result += Price * OptionABCPrice;
+                result += Price * OPTION_ABC_PRICE;
             }
             if (OptionFogLights.Checked)
             {
-                result += Price * OptionFogLightsPrice;
+                result += Price * OPTION_FOG_LIGHTS_PRICE;
             }
-            if (OptionPartronik.Checked)
+            if (OptionParktronik.Checked)
             {
-                result += Price * OptionPartronikPrice;
+                result += Price * OPTION_PARKTRONIK_PRICE;
             }
             if (OptionLeatherInterior.Checked)
             {
-                result += Price * OptionLeatherInteriorPrice;
+                result += Price * OPTION_LEATHER_INTERIOR_PRICE;
             }
             return Convert.ToString(Math.Round(result, 0)) + "₽";
         }
@@ -57,15 +57,15 @@ namespace Комплектация_автомибиля
         {
             if (Model.SelectedIndex == 0)
             {
-                Price.Text = CarPrice(KiaPrice);
+                Price.Text = CarPrice(KIA_PRICE);
             }
             else if (Model.SelectedIndex == 1)
             {
-                Price.Text = CarPrice(BMWPrice);
+                Price.Text = CarPrice(BMW_PRICE);
             }
             else if (Model.SelectedIndex == 2)
             {
-                Price.Text = CarPrice(MercedesPrice);
+                Price.Text = CarPrice(MERCEDES_PRICE);
             }
         }
 
@@ -76,19 +76,19 @@ namespace Комплектация_автомибиля
                 case 0:
                     {
                         ModelPicture.Image = Resources.Kia_Rio;
-                        BasePrice.Text = Convert.ToString(KiaPrice) + "₽";
+                        BasePrice.Text = Convert.ToString(KIA_PRICE) + "₽";
                         break;
                     }
                 case 1:
                     {
                         ModelPicture.Image = Resources.BMW_M5;
-                        BasePrice.Text = Convert.ToString(BMWPrice) + "₽";
+                        BasePrice.Text = Convert.ToString(BMW_PRICE) + "₽";
                         break;
                     }
                 case 2:
                     {
                         ModelPicture.Image = Resources.Mercedes_AMG_GT;
-                        BasePrice.Text = Convert.ToString(MercedesPrice) + "₽";
+                        BasePrice.Text = Convert.ToString(MERCEDES_PRICE) + "₽";
                         break;
                     }
             }

@@ -35,7 +35,7 @@
             this.PriceLabel = new System.Windows.Forms.Label();
             this.ModelPicture = new System.Windows.Forms.PictureBox();
             this.OptionLeatherInterior = new System.Windows.Forms.CheckBox();
-            this.OptionPartronik = new System.Windows.Forms.CheckBox();
+            this.OptionParktronik = new System.Windows.Forms.CheckBox();
             this.OptionFogLights = new System.Windows.Forms.CheckBox();
             this.OptionABC = new System.Windows.Forms.CheckBox();
             this.OptionsLabel = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@
             this.Background.Controls.Add(this.PriceLabel);
             this.Background.Controls.Add(this.ModelPicture);
             this.Background.Controls.Add(this.OptionLeatherInterior);
-            this.Background.Controls.Add(this.OptionPartronik);
+            this.Background.Controls.Add(this.OptionParktronik);
             this.Background.Controls.Add(this.OptionFogLights);
             this.Background.Controls.Add(this.OptionABC);
             this.Background.Controls.Add(this.OptionsLabel);
@@ -137,17 +137,17 @@
             this.OptionLeatherInterior.Text = "Кожаный салон";
             this.OptionLeatherInterior.UseVisualStyleBackColor = true;
             // 
-            // OptionPartronik
+            // OptionParktronik
             // 
-            this.OptionPartronik.AutoSize = true;
-            this.OptionPartronik.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.OptionPartronik.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.OptionPartronik.Location = new System.Drawing.Point(71, 395);
-            this.OptionPartronik.Name = "OptionPartronik";
-            this.OptionPartronik.Size = new System.Drawing.Size(113, 25);
-            this.OptionPartronik.TabIndex = 10;
-            this.OptionPartronik.Text = "Партроник";
-            this.OptionPartronik.UseVisualStyleBackColor = true;
+            this.OptionParktronik.AutoSize = true;
+            this.OptionParktronik.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.OptionParktronik.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.OptionParktronik.Location = new System.Drawing.Point(71, 395);
+            this.OptionParktronik.Name = "OptionParktronik";
+            this.OptionParktronik.Size = new System.Drawing.Size(121, 25);
+            this.OptionParktronik.TabIndex = 10;
+            this.OptionParktronik.Text = "Парктроник";
+            this.OptionParktronik.UseVisualStyleBackColor = true;
             // 
             // OptionFogLights
             // 
@@ -263,7 +263,7 @@
         private Label ExitButton;
         private PictureBox ModelPicture;
         private CheckBox OptionLeatherInterior;
-        private CheckBox OptionPartronik;
+        private CheckBox OptionParktronik;
         private CheckBox OptionFogLights;
         private CheckBox OptionABC;
         private Label OptionsLabel;
