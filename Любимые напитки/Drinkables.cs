@@ -20,49 +20,34 @@ namespace Любимые_напитки
         private readonly List<string> lovedDrinkablesList = new(),
                                       unlovedDrinkablesList = new();
 
-        private void AppendListBoxes()
+        private static void FileReader(string drinkables, List<string> drinkablesList, ListBox Drinkables)
         {
             try
             {
-                StreamReader reader = new(lovedDrinkables);
+                StreamReader reader = new(drinkables);
                 while (!reader.EndOfStream)
                 {
-                    lovedDrinkablesList.Add(reader.ReadLine() ?? string.Empty);
+                    drinkablesList.Add(reader.ReadLine() ?? string.Empty);
                 }
-                foreach (string item in lovedDrinkablesList)
+                foreach (string item in drinkablesList)
                 {
                     if (item != string.Empty)
                     {
-                        LovedDrinkables.Items.Add(item);
+                        Drinkables.Items.Add(item);
                     }
                 }
                 reader.Close();
             }
             catch
             {
-                File.Create(lovedDrinkables);
+                File.Create(drinkables);
             }
+        }
 
-            try
-            {
-                StreamReader reader = new(unlovedDrinkables);
-                while (!reader.EndOfStream)
-                {
-                    unlovedDrinkablesList.Add(reader.ReadLine() ?? string.Empty);
-                }
-                foreach (string item in unlovedDrinkablesList)
-                {
-                    if (item != string.Empty)
-                    {
-                        UnlovedDrinkables.Items.Add(item);
-                    }
-                }
-                reader.Close();
-            }
-            catch
-            {
-                File.Create(unlovedDrinkables);
-            }
+        private void AppendListBoxes()
+        {
+            FileReader(lovedDrinkables, lovedDrinkablesList, LovedDrinkables);
+            FileReader(unlovedDrinkables, unlovedDrinkablesList, UnlovedDrinkables);
         }
 
         private void DrinkablesList()
