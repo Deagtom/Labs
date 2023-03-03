@@ -63,16 +63,16 @@ namespace Кафе
             ExitButton.BackColor = Color.Red;
         }
 
-        private void ClearButton_Click(object sender, EventArgs e)
-        {
-            BaseStart();
-            Price.Text = string.Empty;
-        }
-
         private void ExitButton_MouseLeave(object sender, EventArgs e)
         {
             ExitButton.ForeColor = Color.Black;
             ExitButton.BackColor = Color.Transparent;
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            BaseStart();
+            Price.Text = string.Empty;
         }
 
         private void Background_MouseMove(object sender, MouseEventArgs e)

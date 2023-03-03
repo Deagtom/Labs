@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Комплектация а
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Любимые напитки", "Любимые напитки\Любимые напитки.csproj", "{96DA95B9-C1F9-4121-9E93-B7A38685D086}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Кафе", "Кафе\Кафе.csproj", "{F17F76B6-A1AE-45DD-BE88-4F806471F768}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Кафе", "Кафе\Кафе.csproj", "{F17F76B6-A1AE-45DD-BE88-4F806471F768}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Нахождение наибольшего делителя", "Нахождение наибольшего делителя\Нахождение наибольшего делителя.csproj", "{DC93868A-5986-450C-AAFF-8731D37298D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{F17F76B6-A1AE-45DD-BE88-4F806471F768}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F17F76B6-A1AE-45DD-BE88-4F806471F768}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F17F76B6-A1AE-45DD-BE88-4F806471F768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC93868A-5986-450C-AAFF-8731D37298D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC93868A-5986-450C-AAFF-8731D37298D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC93868A-5986-450C-AAFF-8731D37298D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC93868A-5986-450C-AAFF-8731D37298D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
