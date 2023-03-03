@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Печать фотографий", "..\Лабораторные по формам\Печать фотографий\Печать фотографий.csproj", "{94456698-0A5D-42E4-B5F1-4A2B64582D20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Печать фотографий", "Печать фотографий\Печать фотографий.csproj", "{94456698-0A5D-42E4-B5F1-4A2B64582D20}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Жалюзи", "..\Лабораторные по формам\Жалюзи\Жалюзи.csproj", "{B7B7F6B8-710A-47D9-933B-CCC35704D126}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Жалюзи", "Жалюзи\Жалюзи.csproj", "{B7B7F6B8-710A-47D9-933B-CCC35704D126}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Комплектация автомибиля", "..\Лабораторные по формам\Комплектация автомибиля\Комплектация автомибиля.csproj", "{346D01F1-A74D-4D57-B4EC-0D279DF0A7B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Комплектация автомибиля", "Комплектация автомибиля\Комплектация автомибиля.csproj", "{346D01F1-A74D-4D57-B4EC-0D279DF0A7B4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Кафе", "..\Лабораторные по формам\Кафе\Кафе.csproj", "{4DBD3273-8035-4F4C-8327-A7058AD46D7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Кафе", "Кафе\Кафе.csproj", "{4DBD3273-8035-4F4C-8327-A7058AD46D7E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Любимые напитки", "..\Лабораторные по формам\Любимые напитки\Любимые напитки.csproj", "{175B0294-4906-4094-A383-6430006F2C46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Любимые напитки", "Любимые напитки\Любимые напитки.csproj", "{175B0294-4906-4094-A383-6430006F2C46}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Нахождение наибольшего делителя", "..\Лабораторные по формам\Нахождение наибольшего делителя\Нахождение наибольшего делителя.csproj", "{4A59F590-7131-48E6-BA22-669280B3B59B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Нахождение наибольшего делителя", "Нахождение наибольшего делителя\Нахождение наибольшего делителя.csproj", "{4A59F590-7131-48E6-BA22-669280B3B59B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Перевод градусов", "Перевод градусов\Перевод градусов.csproj", "{79B071DD-ED7D-4D42-A761-6612FBF10C64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{4A59F590-7131-48E6-BA22-669280B3B59B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A59F590-7131-48E6-BA22-669280B3B59B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A59F590-7131-48E6-BA22-669280B3B59B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79B071DD-ED7D-4D42-A761-6612FBF10C64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79B071DD-ED7D-4D42-A761-6612FBF10C64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79B071DD-ED7D-4D42-A761-6612FBF10C64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79B071DD-ED7D-4D42-A761-6612FBF10C64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

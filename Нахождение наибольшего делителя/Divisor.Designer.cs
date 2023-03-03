@@ -61,7 +61,7 @@
             // CalculateButton
             // 
             this.CalculateButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CalculateButton.Location = new System.Drawing.Point(309, 252);
+            this.CalculateButton.Location = new System.Drawing.Point(706, 422);
             this.CalculateButton.Name = "CalculateButton";
             this.CalculateButton.Size = new System.Drawing.Size(200, 65);
             this.CalculateButton.TabIndex = 7;
@@ -87,15 +87,15 @@
             // 
             this.DivisorValue.Enabled = false;
             this.DivisorValue.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DivisorValue.Location = new System.Drawing.Point(435, 446);
+            this.DivisorValue.Location = new System.Drawing.Point(426, 425);
             this.DivisorValue.Name = "DivisorValue";
-            this.DivisorValue.Size = new System.Drawing.Size(216, 35);
+            this.DivisorValue.Size = new System.Drawing.Size(179, 35);
             this.DivisorValue.TabIndex = 5;
             // 
             // SecondValue
             // 
             this.SecondValue.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SecondValue.Location = new System.Drawing.Point(398, 178);
+            this.SecondValue.Location = new System.Drawing.Point(389, 207);
             this.SecondValue.Name = "SecondValue";
             this.SecondValue.Size = new System.Drawing.Size(216, 35);
             this.SecondValue.TabIndex = 4;
@@ -103,7 +103,7 @@
             // FirstValue
             // 
             this.FirstValue.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FirstValue.Location = new System.Drawing.Point(398, 73);
+            this.FirstValue.Location = new System.Drawing.Point(389, 148);
             this.FirstValue.Name = "FirstValue";
             this.FirstValue.Size = new System.Drawing.Size(216, 35);
             this.FirstValue.TabIndex = 3;
@@ -112,7 +112,7 @@
             // 
             this.DivisorValueLabel.AutoSize = true;
             this.DivisorValueLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DivisorValueLabel.Location = new System.Drawing.Point(181, 443);
+            this.DivisorValueLabel.Location = new System.Drawing.Point(172, 422);
             this.DivisorValueLabel.Name = "DivisorValueLabel";
             this.DivisorValueLabel.Size = new System.Drawing.Size(248, 37);
             this.DivisorValueLabel.TabIndex = 2;
@@ -122,7 +122,7 @@
             // 
             this.SecondValueLabel.AutoSize = true;
             this.SecondValueLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SecondValueLabel.Location = new System.Drawing.Point(181, 175);
+            this.SecondValueLabel.Location = new System.Drawing.Point(172, 204);
             this.SecondValueLabel.Name = "SecondValueLabel";
             this.SecondValueLabel.Size = new System.Drawing.Size(205, 37);
             this.SecondValueLabel.TabIndex = 1;
@@ -132,7 +132,7 @@
             // 
             this.FirstValueLabel.AutoSize = true;
             this.FirstValueLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FirstValueLabel.Location = new System.Drawing.Point(181, 70);
+            this.FirstValueLabel.Location = new System.Drawing.Point(172, 145);
             this.FirstValueLabel.Name = "FirstValueLabel";
             this.FirstValueLabel.Size = new System.Drawing.Size(211, 37);
             this.FirstValueLabel.TabIndex = 0;

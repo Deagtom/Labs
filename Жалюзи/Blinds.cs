@@ -94,6 +94,7 @@ namespace Жалюзи
             BaseStart();
             Price.Text = string.Empty;
         }
+
         private void Background_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
