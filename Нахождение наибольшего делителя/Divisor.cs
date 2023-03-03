@@ -15,8 +15,8 @@ namespace Нахождение_наибольшего_делителя
 
         private void BaseStart()
         {
-            FirstValue.Text= "0";
-            SecondValue.Text= "0";
+            FirstValue.Text = "0";
+            SecondValue.Text = "0";
         }
 
         private int NOD()
