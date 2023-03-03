@@ -38,6 +38,21 @@ namespace Перевод_градусов
             }
         }
 
+        private void DegreesEnter(TextBox Degrees)
+        {
+            TotalDegrees.Text = string.Empty;
+            if (Degrees == CelsiusDegrees)
+            {
+                FahrenheitDegrees.Text = string.Empty;
+                TotalDegreesLabel.Text = "Цельсий в Фаренгейт";
+            }
+            else if (Degrees == FahrenheitDegrees)
+            {
+                CelsiusDegrees.Text = string.Empty;
+                TotalDegreesLabel.Text = "Фаренгейт в Цельсий";
+            }
+        }
+
         private void CelsiusDegrees_TextChanged(object sender, EventArgs e)
         {
             Degrees(CelsiusDegrees);
@@ -50,16 +65,12 @@ namespace Перевод_градусов
 
         private void CelsiusDegrees_Enter(object sender, EventArgs e)
         {
-            FahrenheitDegrees.Text = string.Empty;
-            TotalDegrees.Text = string.Empty;
-            TotalDegreesLabel.Text = "Цельсий в Фаренгейт";
+            DegreesEnter(CelsiusDegrees);
         }
 
         private void FahrenheitDegrees_Enter(object sender, EventArgs e)
         {
-            CelsiusDegrees.Text = string.Empty;
-            TotalDegrees.Text = string.Empty;
-            TotalDegreesLabel.Text = "Фаренгейт в Цельсий";
+            DegreesEnter(FahrenheitDegrees);
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
