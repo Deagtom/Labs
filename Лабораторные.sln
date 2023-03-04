@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Любимые напитк
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Нахождение наибольшего делителя", "Нахождение наибольшего делителя\Нахождение наибольшего делителя.csproj", "{4A59F590-7131-48E6-BA22-669280B3B59B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Перевод градусов", "Перевод градусов\Перевод градусов.csproj", "{79B071DD-ED7D-4D42-A761-6612FBF10C64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Перевод градусов", "Перевод градусов\Перевод градусов.csproj", "{79B071DD-ED7D-4D42-A761-6612FBF10C64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Платёж по кредиту", "Платёж по кредиту\Платёж по кредиту.csproj", "{7EF39F7B-732A-4726-9B97-F584A9ED658F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{79B071DD-ED7D-4D42-A761-6612FBF10C64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79B071DD-ED7D-4D42-A761-6612FBF10C64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79B071DD-ED7D-4D42-A761-6612FBF10C64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EF39F7B-732A-4726-9B97-F584A9ED658F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EF39F7B-732A-4726-9B97-F584A9ED658F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EF39F7B-732A-4726-9B97-F584A9ED658F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EF39F7B-732A-4726-9B97-F584A9ED658F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
