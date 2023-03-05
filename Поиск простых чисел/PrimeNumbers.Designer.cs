@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.Background = new System.Windows.Forms.Panel();
+            this.ClearButton = new System.Windows.Forms.Button();
             this.PrimeValuesListBox = new System.Windows.Forms.ListBox();
             this.FindButton = new System.Windows.Forms.Button();
             this.CountValuesLabel = new System.Windows.Forms.Label();
@@ -36,7 +37,6 @@
             this.CountValues = new System.Windows.Forms.TextBox();
             this.PrimeValue = new System.Windows.Forms.TextBox();
             this.ExitButton = new System.Windows.Forms.Label();
-            this.ClearButton = new System.Windows.Forms.Button();
             this.Background.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,17 @@
             this.Background.TabIndex = 0;
             this.Background.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Background_MouseDown);
             this.Background.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Background_MouseMove);
+            // 
+            // ClearButton
+            // 
+            this.ClearButton.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ClearButton.Location = new System.Drawing.Point(383, 453);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(161, 57);
+            this.ClearButton.TabIndex = 20;
+            this.ClearButton.Text = "Очистить";
+            this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // PrimeValuesListBox
             // 
@@ -129,17 +140,6 @@
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             this.ExitButton.MouseEnter += new System.EventHandler(this.ExitButton_MouseEnter);
             this.ExitButton.MouseLeave += new System.EventHandler(this.ExitButton_MouseLeave);
-            // 
-            // ClearButton
-            // 
-            this.ClearButton.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ClearButton.Location = new System.Drawing.Point(383, 453);
-            this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(161, 57);
-            this.ClearButton.TabIndex = 20;
-            this.ClearButton.Text = "Очистить";
-            this.ClearButton.UseVisualStyleBackColor = true;
-            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // Menu
             // 

@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Перевод градус
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Платёж по кредиту", "Платёж по кредиту\Платёж по кредиту.csproj", "{7EF39F7B-732A-4726-9B97-F584A9ED658F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Поиск простых чисел", "Поиск простых чисел\Поиск простых чисел.csproj", "{A18B965B-80D6-4A88-AD28-917EF4DDED71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Поиск простых чисел", "Поиск простых чисел\Поиск простых чисел.csproj", "{A18B965B-80D6-4A88-AD28-917EF4DDED71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Простые сомножители", "Простые сомножители\Простые сомножители.csproj", "{58AA1EAC-D973-4FEE-B778-49A9EEBD8D00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{A18B965B-80D6-4A88-AD28-917EF4DDED71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A18B965B-80D6-4A88-AD28-917EF4DDED71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A18B965B-80D6-4A88-AD28-917EF4DDED71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58AA1EAC-D973-4FEE-B778-49A9EEBD8D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58AA1EAC-D973-4FEE-B778-49A9EEBD8D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58AA1EAC-D973-4FEE-B778-49A9EEBD8D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58AA1EAC-D973-4FEE-B778-49A9EEBD8D00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
