@@ -9,6 +9,7 @@ namespace Нахождение_наибольшего_делителя
         }
 
         private Point lastPoint;
+
         private int firstValue,
                     secondValue,
                     divisorValue;

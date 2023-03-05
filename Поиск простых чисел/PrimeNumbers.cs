@@ -1,35 +1,56 @@
-namespace Платёж_по_кредиту
+namespace Поиск_простых_чисел
 {
     public partial class Menu : Form
     {
         public Menu()
         {
             InitializeComponent();
-            BaseStart();
         }
 
         private Point lastPoint;
-        private int term;
-        private double sum,
-                       interest,
-                       result;
 
-        private void BaseStart()
+        private int primeValue,
+                    count = 0;
+
+        private static bool IsPrimeNumber(int number)
         {
-            TermCredit.Text = "1";
-            AmountCredit.Text = "0";
-            InterestCredit.Text = "0";
+            int sqrtNumber = (int)Math.Sqrt(number);
+            for (int i = 2; i <= sqrtNumber; i++)
+            {
+                if (number % i == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
-        private void CalculateButton_Click(object sender, EventArgs e)
+        private void EnabledObject(bool enabled)
+        {
+            PrimeValue.Enabled = enabled;
+            CountValues.Enabled = enabled;
+            FindButton.Enabled = enabled;
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void FindButton_Click(object sender, EventArgs e)
         {
             try
             {
-                sum = double.Parse(AmountCredit.Text);
-                interest = double.Parse(InterestCredit.Text) / 100 / 12;
-                term = int.Parse(TermCredit.Text);
-                result = Math.Round(sum * (interest + interest / (Math.Pow(1 + interest, term) - 1)), 2);
-                MontlyPaymentCredit.Text = Convert.ToString(result);
+                primeValue = int.Parse(PrimeValue.Text);
+                for (int number = primeValue; count != int.Parse(CountValues.Text); number++)
+                {
+                    if (IsPrimeNumber(number))
+                    {
+                        PrimeValuesListBox.Items.Add(number);
+                        count++;
+                    }
+                }
+                EnabledObject(false);
             }
             catch
             {
