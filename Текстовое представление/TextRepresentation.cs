@@ -78,32 +78,35 @@ namespace Текстовое_представление
                 {
                     TextValue.Text = "Нуль";
                 }
-                else if (Value.Text.Length == 3 && Value.Text[0] != '0')
+                if (Value.Text[0] != '0' && Value.Text[0] != '-')
                 {
-                    Translate(hundredToThousand, 0);
-                    if (Value.Text[1] == '1')
+                    if (Value.Text.Length == 3)
                     {
-                        Translate(tenToTwenty, 2);
+                        Translate(hundredToThousand, 0);
+                        if (Value.Text[1] == '1')
+                        {
+                            Translate(tenToTwenty, 2);
+                        }
+                        else
+                        {
+                            Translate(twentyToHundred, 1);
+                            Translate(zeroToTen, 2);
+                        }
                     }
-                    else
+                    else if (Value.Text.Length == 2 && Value.Text[0] == '1')
                     {
-                        Translate(twentyToHundred, 1);
-                        Translate(zeroToTen, 2);
+                        Translate(tenToTwenty, 1);
                     }
-                }
-                else if (Value.Text.Length == 2 && Value.Text[0] == '1' && Value.Text[0] != '0')
-                {
-                    Translate(tenToTwenty, 1);
-                }
-                else if (Value.Text.Length == 2 && Value.Text[0] != '0')
-                {
-                    Translate(twentyToHundred, 0);
-                    Translate(zeroToTen, 1);
-                }
-                else if (Value.Text.Length == 1 && Value.Text[0] != '0')
-                {
-                    Translate(zeroToTen, 0);
-                }
+                    else if (Value.Text.Length == 2)
+                    {
+                        Translate(twentyToHundred, 0);
+                        Translate(zeroToTen, 1);
+                    }
+                    else if (Value.Text.Length == 1)
+                    {
+                        Translate(zeroToTen, 0);
+                    }
+                } 
             }
             else
             {
