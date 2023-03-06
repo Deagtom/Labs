@@ -78,7 +78,7 @@ namespace Текстовое_представление
                 {
                     TextValue.Text = "Нуль";
                 }
-                else if (Value.Text.Length == 3)
+                else if (Value.Text.Length == 3 && Value.Text[0] != '0')
                 {
                     Translate(hundredToThousand, 0);
                     if (Value.Text[1] == '1')
@@ -91,16 +91,16 @@ namespace Текстовое_представление
                         Translate(zeroToTen, 2);
                     }
                 }
-                else if (Value.Text.Length == 2 && Value.Text[0] == '1')
+                else if (Value.Text.Length == 2 && Value.Text[0] == '1' && Value.Text[0] != '0')
                 {
                     Translate(tenToTwenty, 1);
                 }
-                else if (Value.Text.Length == 2)
+                else if (Value.Text.Length == 2 && Value.Text[0] != '0')
                 {
                     Translate(twentyToHundred, 0);
                     Translate(zeroToTen, 1);
                 }
-                else if (Value.Text.Length == 1)
+                else if (Value.Text.Length == 1 && Value.Text[0] != '0')
                 {
                     Translate(zeroToTen, 0);
                 }
