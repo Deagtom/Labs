@@ -11,9 +11,9 @@ namespace Текстовое_представление
         private Point lastPoint;
 
         private readonly Dictionary<char, string> zeroToTen = new(),
-                                                 tenToTwenty = new(),
-                                                 twentyToHundred = new(),
-                                                 hundredToThousand = new();
+                                                  tenToTwenty = new(),
+                                                  twentyToHundred = new(),
+                                                  hundredToThousand = new();
 
         private void AppendDictionary()
         {
