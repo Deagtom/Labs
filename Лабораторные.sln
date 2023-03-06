@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Платёж по кред�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Поиск простых чисел", "Поиск простых чисел\Поиск простых чисел.csproj", "{A18B965B-80D6-4A88-AD28-917EF4DDED71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Простые сомножители", "Простые сомножители\Простые сомножители.csproj", "{58AA1EAC-D973-4FEE-B778-49A9EEBD8D00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Простые сомножители", "Простые сомножители\Простые сомножители.csproj", "{58AA1EAC-D973-4FEE-B778-49A9EEBD8D00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Текстовое представление", "Текстовое представление\Текстовое представление.csproj", "{E82A3B99-63D7-4449-8D6D-A732257B6910}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{58AA1EAC-D973-4FEE-B778-49A9EEBD8D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58AA1EAC-D973-4FEE-B778-49A9EEBD8D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58AA1EAC-D973-4FEE-B778-49A9EEBD8D00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E82A3B99-63D7-4449-8D6D-A732257B6910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E82A3B99-63D7-4449-8D6D-A732257B6910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E82A3B99-63D7-4449-8D6D-A732257B6910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E82A3B99-63D7-4449-8D6D-A732257B6910}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,7 +10,7 @@ namespace Простые_сомножители
         private Point lastPoint;
 
         private int number,
-                    divieder;                    
+                    divieder;
 
         private void CalculateButton_Click(object sender, EventArgs e)
         {
