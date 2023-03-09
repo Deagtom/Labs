@@ -10,6 +10,9 @@ namespace Текстовое_представление
 
         private Point lastPoint;
 
+        private string upperText = string.Empty,
+                       lowerText = string.Empty;
+
         private readonly Dictionary<char, string> zeroToTen = new(),
                                                   tenToTwenty = new(),
                                                   twentyToHundred = new(),
@@ -106,7 +109,11 @@ namespace Текстовое_представление
                     {
                         Translate(zeroToTen, 0);
                     }
-                } 
+                    upperText = Convert.ToString(TextValue.Text[0]);
+                    TextValue.Text = TextValue.Text.Remove(0, 1);
+                    lowerText = TextValue.Text.ToLower();
+                    TextValue.Text = upperText + lowerText;
+                }
             }
             else
             {
