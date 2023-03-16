@@ -54,13 +54,12 @@ namespace Номера_машины
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            number = CarNumbersTextBox.Text.ToUpperInvariant();
-            if (!NumbersListBox.Items.Contains(number))
+            if (!NumbersListBox.Items.Contains(CarNumbersTextBox.Text.ToUpperInvariant()))
             {
                 if (IsCarNumber())
                 {
-                    NumbersListBox.Items.Add(number);
-                    values[0] = number;
+                    NumbersListBox.Items.Add(CarNumbersTextBox.Text.ToUpperInvariant());
+                    values[0] = CarNumbersTextBox.Text.ToUpperInvariant();
                     values[1] = ModelComboBox.Text;
                     values[2] = ColorComboBox.Text;
                     values[3] = NameTextBox.Text;
