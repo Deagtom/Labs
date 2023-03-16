@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 namespace Номера_машины
 {
     public partial class Menu : Form
@@ -13,52 +11,94 @@ namespace Номера_машины
 
         private string number;
 
-        List<List<string>> info = new List<List<string>>();
-        List<string> values = new List<string>();
+        List<string[]> info = new List<string[]>();
+        string[] values = new string[4];
 
+        private bool IsCarNumber()
+        {
+            if (CarNumbersTextBox.Text.Length == 6 && 
+                char.IsLetter(CarNumbersTextBox.Text[0]) &&
+                char.IsDigit(CarNumbersTextBox.Text[1]) &&
+                char.IsDigit(CarNumbersTextBox.Text[2]) &&
+                char.IsDigit(CarNumbersTextBox.Text[3]) &&
+                char.IsLetter(CarNumbersTextBox.Text[4]) &&
+                char.IsLetter(CarNumbersTextBox.Text[5]))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private void NumbersListBox_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                number = NumbersListBox.SelectedItem.ToString();
+                for (int i = 0; i < info.Count; i++)
+                {
+                    if (number == info[i][0])
+                    {
+                        CarNumbersTextBox.Text = info[i][0];
+                        ModelComboBox.Text = info[i][1];
+                        ColorComboBox.Text = info[i][2];
+                        NameTextBox.Text = info[i][3];
+                        SaveButton.Enabled = false;
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+        }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            if (CarNumbersTextBox.Text.Length == 6)
+            number = CarNumbersTextBox.Text.ToUpperInvariant();
+            if (!NumbersListBox.Items.Contains(number))
             {
-                NumbersListBox.Items.Add(CarNumbersTextBox.Text);
-                values.Clear();
-                values.Add(CarNumbersTextBox.Text);
-                values.Add(ModelTextBox.Text);
-                values.Add(ColorComboBox.Text);
-                values.Add(NameTextBox.Text);
-                info.Add(values);
-
-
+                if (IsCarNumber())
+                {
+                    NumbersListBox.Items.Add(number);
+                    values[0] = number;
+                    values[1] = ModelComboBox.Text;
+                    values[2] = ColorComboBox.Text;
+                    values[3] = NameTextBox.Text;
+                    info.Add(values);
+                }
+                else
+                {
+                    MessageBox.Show("Введите номер правильно\n\nПример: х000хх");
+                    CarNumbersTextBox.Text = string.Empty;
+                }
             }
             else
             {
-                MessageBox.Show("Введите номер правильно\n\nПример: х000хх");
+                MessageBox.Show("Дубликаты не допускаются");
+                CarNumbersTextBox.Text = string.Empty;
             }
         }
 
         private void ResetButton_Click(object sender, EventArgs e)
         {
             CarNumbersTextBox.Text = string.Empty;
-            ModelTextBox.Text = string.Empty;
-            ColorComboBox.Text = string.Empty;
+            ModelComboBox.SelectedItem = null;
+            ColorComboBox.SelectedItem = null;
             NameTextBox.Text = string.Empty;
+            SaveButton.Enabled = true;
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            number = NumbersListBox.SelectedItem.ToString() ?? "х";
-            foreach (List<string> item in info)
+            number = NumbersListBox.SelectedItem.ToString();
+            for (int i = 0; i < info.Count; i++)
             {
-                foreach (string number in item)
+                if (number == info[i][0])
                 {
-                    if (this.number == number)
-                    {
-                        info.Remove(item);
-                    }
+                    info.Remove(info[i]);
+                    NumbersListBox.Items.Remove(NumbersListBox.SelectedIndex);
                 }
             }
-            NumbersListBox.SelectedItem = null;
         }
 
         private void ExitButton_Click(object sender, EventArgs e)

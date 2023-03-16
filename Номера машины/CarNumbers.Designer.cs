@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.Background = new System.Windows.Forms.Panel();
+            this.NumbersListBox = new System.Windows.Forms.ListBox();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.NumbersListLabel = new System.Windows.Forms.Label();
-            this.NumbersListBox = new System.Windows.Forms.ListBox();
             this.InfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.ModelComboBox = new System.Windows.Forms.ComboBox();
             this.ColorComboBox = new System.Windows.Forms.ComboBox();
             this.ResetButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.ModelTextBox = new System.Windows.Forms.TextBox();
             this.CarNumbersTextBox = new System.Windows.Forms.TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
             this.ColorLabel = new System.Windows.Forms.Label();
@@ -50,9 +50,9 @@
             // 
             // Background
             // 
+            this.Background.Controls.Add(this.NumbersListBox);
             this.Background.Controls.Add(this.DeleteButton);
             this.Background.Controls.Add(this.NumbersListLabel);
-            this.Background.Controls.Add(this.NumbersListBox);
             this.Background.Controls.Add(this.InfoGroupBox);
             this.Background.Controls.Add(this.ExitButton);
             this.Background.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -62,6 +62,17 @@
             this.Background.TabIndex = 0;
             this.Background.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Background_MouseDown);
             this.Background.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Background_MouseMove);
+            // 
+            // NumbersListBox
+            // 
+            this.NumbersListBox.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NumbersListBox.FormattingEnabled = true;
+            this.NumbersListBox.ItemHeight = 25;
+            this.NumbersListBox.Location = new System.Drawing.Point(31, 113);
+            this.NumbersListBox.Name = "NumbersListBox";
+            this.NumbersListBox.Size = new System.Drawing.Size(246, 379);
+            this.NumbersListBox.TabIndex = 10;
+            this.NumbersListBox.DoubleClick += new System.EventHandler(this.NumbersListBox_DoubleClick);
             // 
             // DeleteButton
             // 
@@ -84,23 +95,13 @@
             this.NumbersListLabel.TabIndex = 4;
             this.NumbersListLabel.Text = "Список номеров";
             // 
-            // NumbersListBox
-            // 
-            this.NumbersListBox.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NumbersListBox.FormattingEnabled = true;
-            this.NumbersListBox.ItemHeight = 25;
-            this.NumbersListBox.Location = new System.Drawing.Point(31, 119);
-            this.NumbersListBox.Name = "NumbersListBox";
-            this.NumbersListBox.Size = new System.Drawing.Size(242, 354);
-            this.NumbersListBox.TabIndex = 3;
-            // 
             // InfoGroupBox
             // 
+            this.InfoGroupBox.Controls.Add(this.ModelComboBox);
             this.InfoGroupBox.Controls.Add(this.ColorComboBox);
             this.InfoGroupBox.Controls.Add(this.ResetButton);
             this.InfoGroupBox.Controls.Add(this.SaveButton);
             this.InfoGroupBox.Controls.Add(this.NameTextBox);
-            this.InfoGroupBox.Controls.Add(this.ModelTextBox);
             this.InfoGroupBox.Controls.Add(this.CarNumbersTextBox);
             this.InfoGroupBox.Controls.Add(this.NameLabel);
             this.InfoGroupBox.Controls.Add(this.ColorLabel);
@@ -114,8 +115,34 @@
             this.InfoGroupBox.TabStop = false;
             this.InfoGroupBox.Text = "Данные";
             // 
+            // ModelComboBox
+            // 
+            this.ModelComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ModelComboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ModelComboBox.FormattingEnabled = true;
+            this.ModelComboBox.Items.AddRange(new object[] {
+            "Lada Granta",
+            "Lada Vesta",
+            "Lada Priora",
+            "Hyundai Solaris",
+            "Toyota Camry",
+            "Toyota Land Cruiser",
+            "Toyota Supra",
+            "Toyota Mark II",
+            "Kia Sportage",
+            "Kia Rio",
+            "Nissan Qashqai",
+            "Nissan Skyline",
+            "Ford Mustang"});
+            this.ModelComboBox.Location = new System.Drawing.Point(197, 144);
+            this.ModelComboBox.Name = "ModelComboBox";
+            this.ModelComboBox.Size = new System.Drawing.Size(285, 33);
+            this.ModelComboBox.TabIndex = 11;
+            // 
             // ColorComboBox
             // 
+            this.ColorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ColorComboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ColorComboBox.FormattingEnabled = true;
             this.ColorComboBox.Items.AddRange(new object[] {
             "Белый",
@@ -127,7 +154,7 @@
             "Серый"});
             this.ColorComboBox.Location = new System.Drawing.Point(197, 223);
             this.ColorComboBox.Name = "ColorComboBox";
-            this.ColorComboBox.Size = new System.Drawing.Size(285, 38);
+            this.ColorComboBox.Size = new System.Drawing.Size(285, 33);
             this.ColorComboBox.TabIndex = 10;
             // 
             // ResetButton
@@ -154,23 +181,18 @@
             // 
             // NameTextBox
             // 
+            this.NameTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.NameTextBox.Location = new System.Drawing.Point(197, 298);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(285, 35);
+            this.NameTextBox.Size = new System.Drawing.Size(285, 33);
             this.NameTextBox.TabIndex = 7;
-            // 
-            // ModelTextBox
-            // 
-            this.ModelTextBox.Location = new System.Drawing.Point(197, 144);
-            this.ModelTextBox.Name = "ModelTextBox";
-            this.ModelTextBox.Size = new System.Drawing.Size(285, 35);
-            this.ModelTextBox.TabIndex = 5;
             // 
             // CarNumbersTextBox
             // 
+            this.CarNumbersTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CarNumbersTextBox.Location = new System.Drawing.Point(197, 65);
             this.CarNumbersTextBox.Name = "CarNumbersTextBox";
-            this.CarNumbersTextBox.Size = new System.Drawing.Size(285, 35);
+            this.CarNumbersTextBox.Size = new System.Drawing.Size(285, 33);
             this.CarNumbersTextBox.TabIndex = 4;
             // 
             // NameLabel
@@ -255,11 +277,11 @@
         private Button ResetButton;
         private Button SaveButton;
         private TextBox NameTextBox;
-        private TextBox ModelTextBox;
         private TextBox CarNumbersTextBox;
         private ComboBox ColorComboBox;
         private Button DeleteButton;
         private Label NumbersListLabel;
+        private ComboBox ModelComboBox;
         private ListBox NumbersListBox;
     }
 }
