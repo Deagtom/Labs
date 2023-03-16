@@ -144,9 +144,9 @@
             this.FoodBigMac.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FoodBigMac.Location = new System.Drawing.Point(146, 189);
             this.FoodBigMac.Name = "FoodBigMac";
-            this.FoodBigMac.Size = new System.Drawing.Size(236, 33);
+            this.FoodBigMac.Size = new System.Drawing.Size(126, 33);
             this.FoodBigMac.TabIndex = 1;
-            this.FoodBigMac.Text = "Биг-Пошёл-Нахуй";
+            this.FoodBigMac.Text = "Биг-Мак";
             this.FoodBigMac.UseVisualStyleBackColor = true;
             // 
             // ExitButton
