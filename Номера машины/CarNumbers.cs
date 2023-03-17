@@ -5,7 +5,6 @@ namespace Номера_машины
         public Menu()
         {
             InitializeComponent();
-            IsVisibleData(false);
             EnterOrChangeGomboBox.SelectedIndex = 1;
         }
 
@@ -54,18 +53,19 @@ namespace Номера_машины
             }
         }
 
-        private void SaveButton_Click(object sender, EventArgs e)
+        private void Save()
         {
-            if (!NumbersListBox.Items.Contains(CarNumbersTextBox.Text.ToUpperInvariant()))
+            number = CarNumbersTextBox.Text.ToUpperInvariant();
+            if (!NumbersListBox.Items.Contains(number))
             {
                 if (IsCarNumber())
                 {
-                    NumbersListBox.Items.Add(CarNumbersTextBox.Text.ToUpperInvariant());
-                    info.Add(new Car(CarNumbersTextBox.Text.ToUpperInvariant(),
+                    NumbersListBox.Items.Add(number);
+                    info.Add(new Car(number,
                                      ModelComboBox.Text,
                                      ColorComboBox.Text,
                                      NameTextBox.Text));
-
+                    Clear();
                 }
                 else
                 {
@@ -75,8 +75,16 @@ namespace Номера_машины
             }
             else
             {
-                MessageBox.Show("Дубликаты не допускаются");
-                CarNumbersTextBox.Text = string.Empty;
+                for (int i = 0; i < info.Count; i++)
+                {
+                    if (number == info[i].Gosnomer)
+                    {
+                        info[i].Model = ModelComboBox.Text;
+                        info[i].Color = ColorComboBox.Text;
+                        info[i].FIO = NameTextBox.Text;
+                        Clear();
+                    }
+                }
             }
         }
 
@@ -88,12 +96,7 @@ namespace Номера_машины
             NameTextBox.Text = string.Empty;
         }
 
-        private void ResetButton_Click(object sender, EventArgs e)
-        {
-            Clear();
-        }
-
-        private void DeleteButton_Click(object sender, EventArgs e)
+        private void Remove()
         {
             number = NumbersListBox.SelectedItem.ToString() ?? "X000XX";
             for (int i = 0; i < info.Count; i++)
@@ -106,7 +109,6 @@ namespace Номера_машины
                     {
                         NumbersListBox.Items.Add(item.Gosnomer);
                     }
-                    Clear();
                 }
             }
         }
@@ -126,6 +128,33 @@ namespace Номера_машины
                         break;
                     }
             }
+        }
+
+        private void CarNumbersTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Save();
+                EnterOrChangeGomboBox.SelectedIndex = 1;
+            }
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            Save();
+            EnterOrChangeGomboBox.SelectedIndex = 1;
+        }
+
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            Clear();
+            EnterOrChangeGomboBox.SelectedIndex = 0;  
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            Remove();
+            Clear();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)

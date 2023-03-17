@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.Background = new System.Windows.Forms.Panel();
+            this.EnterOrChangeGomboBox = new System.Windows.Forms.ComboBox();
             this.NumbersListBox = new System.Windows.Forms.ListBox();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.NumbersListLabel = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@
             this.ModelLabel = new System.Windows.Forms.Label();
             this.CarNumbersLabel = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Label();
-            this.EnterOrChangeGomboBox = new System.Windows.Forms.ComboBox();
             this.Background.SuspendLayout();
             this.InfoGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +64,20 @@
             this.Background.TabIndex = 0;
             this.Background.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Background_MouseDown);
             this.Background.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Background_MouseMove);
+            // 
+            // EnterOrChangeGomboBox
+            // 
+            this.EnterOrChangeGomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EnterOrChangeGomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EnterOrChangeGomboBox.FormattingEnabled = true;
+            this.EnterOrChangeGomboBox.Items.AddRange(new object[] {
+            "Ввести данные",
+            "Изменить данные"});
+            this.EnterOrChangeGomboBox.Location = new System.Drawing.Point(31, 117);
+            this.EnterOrChangeGomboBox.Name = "EnterOrChangeGomboBox";
+            this.EnterOrChangeGomboBox.Size = new System.Drawing.Size(246, 33);
+            this.EnterOrChangeGomboBox.TabIndex = 11;
+            this.EnterOrChangeGomboBox.SelectedIndexChanged += new System.EventHandler(this.EnterOrChangeGomboBox_SelectedIndexChanged);
             // 
             // NumbersListBox
             // 
@@ -196,6 +210,7 @@
             this.CarNumbersTextBox.Name = "CarNumbersTextBox";
             this.CarNumbersTextBox.Size = new System.Drawing.Size(285, 33);
             this.CarNumbersTextBox.TabIndex = 4;
+            this.CarNumbersTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CarNumbersTextBox_KeyDown);
             // 
             // NameLabel
             // 
@@ -250,20 +265,6 @@
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             this.ExitButton.MouseEnter += new System.EventHandler(this.ExitButton_MouseEnter);
             this.ExitButton.MouseLeave += new System.EventHandler(this.ExitButton_MouseLeave);
-            // 
-            // EnterOrChangeGomboBox
-            // 
-            this.EnterOrChangeGomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.EnterOrChangeGomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.EnterOrChangeGomboBox.FormattingEnabled = true;
-            this.EnterOrChangeGomboBox.Items.AddRange(new object[] {
-            "Ввести данные",
-            "Изменить данные"});
-            this.EnterOrChangeGomboBox.Location = new System.Drawing.Point(31, 117);
-            this.EnterOrChangeGomboBox.Name = "EnterOrChangeGomboBox";
-            this.EnterOrChangeGomboBox.Size = new System.Drawing.Size(246, 33);
-            this.EnterOrChangeGomboBox.TabIndex = 11;
-            this.EnterOrChangeGomboBox.SelectedIndexChanged += new System.EventHandler(this.EnterOrChangeGomboBox_SelectedIndexChanged);
             // 
             // Menu
             // 
