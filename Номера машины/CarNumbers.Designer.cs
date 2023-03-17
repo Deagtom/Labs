@@ -44,12 +44,14 @@
             this.ModelLabel = new System.Windows.Forms.Label();
             this.CarNumbersLabel = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Label();
+            this.EnterOrChangeGomboBox = new System.Windows.Forms.ComboBox();
             this.Background.SuspendLayout();
             this.InfoGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // Background
             // 
+            this.Background.Controls.Add(this.EnterOrChangeGomboBox);
             this.Background.Controls.Add(this.NumbersListBox);
             this.Background.Controls.Add(this.DeleteButton);
             this.Background.Controls.Add(this.NumbersListLabel);
@@ -68,9 +70,9 @@
             this.NumbersListBox.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.NumbersListBox.FormattingEnabled = true;
             this.NumbersListBox.ItemHeight = 25;
-            this.NumbersListBox.Location = new System.Drawing.Point(31, 113);
+            this.NumbersListBox.Location = new System.Drawing.Point(31, 151);
             this.NumbersListBox.Name = "NumbersListBox";
-            this.NumbersListBox.Size = new System.Drawing.Size(246, 379);
+            this.NumbersListBox.Size = new System.Drawing.Size(246, 329);
             this.NumbersListBox.TabIndex = 10;
             this.NumbersListBox.DoubleClick += new System.EventHandler(this.NumbersListBox_DoubleClick);
             // 
@@ -249,6 +251,20 @@
             this.ExitButton.MouseEnter += new System.EventHandler(this.ExitButton_MouseEnter);
             this.ExitButton.MouseLeave += new System.EventHandler(this.ExitButton_MouseLeave);
             // 
+            // EnterOrChangeGomboBox
+            // 
+            this.EnterOrChangeGomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EnterOrChangeGomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EnterOrChangeGomboBox.FormattingEnabled = true;
+            this.EnterOrChangeGomboBox.Items.AddRange(new object[] {
+            "Ввести данные",
+            "Изменить данные"});
+            this.EnterOrChangeGomboBox.Location = new System.Drawing.Point(31, 117);
+            this.EnterOrChangeGomboBox.Name = "EnterOrChangeGomboBox";
+            this.EnterOrChangeGomboBox.Size = new System.Drawing.Size(246, 33);
+            this.EnterOrChangeGomboBox.TabIndex = 11;
+            this.EnterOrChangeGomboBox.SelectedIndexChanged += new System.EventHandler(this.EnterOrChangeGomboBox_SelectedIndexChanged);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -283,5 +299,6 @@
         private Label NumbersListLabel;
         private ComboBox ModelComboBox;
         private ListBox NumbersListBox;
+        private ComboBox EnterOrChangeGomboBox;
     }
 }

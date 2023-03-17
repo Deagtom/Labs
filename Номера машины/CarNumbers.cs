@@ -5,18 +5,24 @@ namespace Номера_машины
         public Menu()
         {
             InitializeComponent();
+            IsVisibleData(false);
+            EnterOrChangeGomboBox.SelectedIndex = 1;
         }
 
         private Point lastPoint;
 
         private string number;
 
-        List<string[]> info = new List<string[]>();
-        string[] values = new string[4];
+        List<Car> info = new List<Car>();
+
+        private void IsVisibleData(bool enabled)
+        {
+            InfoGroupBox.Visible = enabled;
+        }
 
         private bool IsCarNumber()
         {
-            if (CarNumbersTextBox.Text.Length == 6 && 
+            if (CarNumbersTextBox.Text.Length == 6 &&
                 char.IsLetter(CarNumbersTextBox.Text[0]) &&
                 char.IsDigit(CarNumbersTextBox.Text[1]) &&
                 char.IsDigit(CarNumbersTextBox.Text[2]) &&
@@ -31,24 +37,20 @@ namespace Номера_машины
 
         private void NumbersListBox_DoubleClick(object sender, EventArgs e)
         {
-            try
+            if (NumbersListBox.Items.Count > 0)
             {
-                number = NumbersListBox.SelectedItem.ToString();
+                number = NumbersListBox.SelectedItem.ToString() ?? "X000XX";
                 for (int i = 0; i < info.Count; i++)
                 {
-                    if (number == info[i][0])
+                    if (number == info[i].Gosnomer)
                     {
-                        CarNumbersTextBox.Text = info[i][0];
-                        ModelComboBox.Text = info[i][1];
-                        ColorComboBox.Text = info[i][2];
-                        NameTextBox.Text = info[i][3];
-                        SaveButton.Enabled = false;
+                        CarNumbersTextBox.Text = info[i].Gosnomer;
+                        ModelComboBox.Text = info[i].Model;
+                        ColorComboBox.Text = info[i].Color;
+                        NameTextBox.Text = info[i].FIO;
+                        IsVisibleData(true);
                     }
                 }
-            }
-            catch
-            {
-
             }
         }
 
@@ -59,11 +61,11 @@ namespace Номера_машины
                 if (IsCarNumber())
                 {
                     NumbersListBox.Items.Add(CarNumbersTextBox.Text.ToUpperInvariant());
-                    values[0] = CarNumbersTextBox.Text.ToUpperInvariant();
-                    values[1] = ModelComboBox.Text;
-                    values[2] = ColorComboBox.Text;
-                    values[3] = NameTextBox.Text;
-                    info.Add(values);
+                    info.Add(new Car(CarNumbersTextBox.Text.ToUpperInvariant(),
+                                     ModelComboBox.Text,
+                                     ColorComboBox.Text,
+                                     NameTextBox.Text));
+
                 }
                 else
                 {
@@ -78,25 +80,51 @@ namespace Номера_машины
             }
         }
 
-        private void ResetButton_Click(object sender, EventArgs e)
+        private void Clear()
         {
             CarNumbersTextBox.Text = string.Empty;
             ModelComboBox.SelectedItem = null;
             ColorComboBox.SelectedItem = null;
             NameTextBox.Text = string.Empty;
-            SaveButton.Enabled = true;
+        }
+
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            number = NumbersListBox.SelectedItem.ToString();
+            number = NumbersListBox.SelectedItem.ToString() ?? "X000XX";
             for (int i = 0; i < info.Count; i++)
             {
-                if (number == info[i][0])
+                if (number == info[i].Gosnomer)
                 {
                     info.Remove(info[i]);
-                    NumbersListBox.Items.Remove(NumbersListBox.SelectedIndex);
+                    NumbersListBox.Items.Clear();
+                    foreach (var item in info)
+                    {
+                        NumbersListBox.Items.Add(item.Gosnomer);
+                    }
+                    Clear();
                 }
+            }
+        }
+
+        private void EnterOrChangeGomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (EnterOrChangeGomboBox.SelectedIndex)
+            {
+                case 0:
+                    {
+                        IsVisibleData(true);
+                        break;
+                    }
+                case 1:
+                    {
+                        IsVisibleData(false);
+                        break;
+                    }
             }
         }
 
