@@ -5,12 +5,12 @@ namespace Номера_машины
         public Menu()
         {
             InitializeComponent();
-            EnterOrChangeGomboBox.SelectedIndex = 1;
+            EnterOrChangeGomboBox.SelectedIndex = 0;
         }
 
         private Point lastPoint;
 
-        private string number;
+        private string number = string.Empty;
 
         List<Car> info = new List<Car>();
 
@@ -148,7 +148,7 @@ namespace Номера_машины
         private void ResetButton_Click(object sender, EventArgs e)
         {
             Clear();
-            EnterOrChangeGomboBox.SelectedIndex = 0;  
+            EnterOrChangeGomboBox.SelectedIndex = 0;
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
