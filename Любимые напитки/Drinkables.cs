@@ -103,32 +103,23 @@ namespace Любимые_напитки
             MoveItem(UnlovedDrinkables, Drinkables);
         }
 
-        private void SaveButton_Click(object sender, EventArgs e)
+        private void Save(string drinkables, ListBox Drinkables)
         {
-            StreamWriter writerLoved = new(lovedDrinkables);
-            foreach (string item in LovedDrinkables.Items)
+            StreamWriter writer = new(drinkables);
+            foreach (string item in Drinkables.Items)
             {
                 if (item != string.Empty)
                 {
-                    writerLoved.WriteLine(item);
+                    writer.WriteLine(item);
                 }
             }
-            writerLoved.Close();
-            
-            StreamWriter writerUnloved = new(unlovedDrinkables);
-            foreach (string item in UnlovedDrinkables.Items)
-            {
-                if (item != string.Empty)
-                {
-                    writerUnloved.WriteLine(item);
-                }
-            }
-            writerUnloved.Close();
+            writer.Close();
         }
 
-        private void ExitButton_Click(object sender, EventArgs e)
+        private void SaveButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Save(lovedDrinkables, LovedDrinkables);
+            Save(unlovedDrinkables, UnlovedDrinkables);
         }
 
         private void Drinkables_DragEnter(object sender, DragEventArgs e)
@@ -171,6 +162,11 @@ namespace Любимые_напитки
                     listFor.DoDragDrop(listFrom.Items[^1].ToString(), DragDropEffects.Copy);
                 }
             }
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void Background_MouseMove(object sender, MouseEventArgs e)
