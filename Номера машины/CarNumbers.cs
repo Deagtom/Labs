@@ -1,7 +1,5 @@
 using Номера_машины.Controllers;
 using System.Data.OleDb;
-using System.Reflection;
-using System.Drawing;
 
 namespace Номера_машины
 {
