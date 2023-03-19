@@ -22,11 +22,6 @@ namespace Номера_машины
         private string number = string.Empty;
         private List<Car> info = new List<Car>();
 
-        private void IsVisibleData(bool enabled)
-        {
-            InfoGroupBox.Visible = enabled;
-        }
-
         private void Start()
         {
             int count;
@@ -41,9 +36,9 @@ namespace Номера_машины
                 NumbersListBox.Items.Add(command.ExecuteScalar() ?? "");
             }
 
-            for (int i = 1; i <= NumbersListBox.Items.Count + 1; i++)
+            for (int i = 0; i <= NumbersListBox.Items.Count + 1; i++)
             {
-                query = $"SELECT Number, Model, Color, FIO FROM CarInfo WHERE ID = {i}";
+                query = $"SELECT Number, Model, Color, FIO FROM CarInfo";
                 command = new OleDbCommand(query, controller);
                 OleDbDataReader reader = command.ExecuteReader();
                 while (reader.Read())
@@ -91,11 +86,11 @@ namespace Номера_машины
                     {
                         if (number == info[i].Gosnomer)
                         {
+                            Clear();
                             CarNumbersTextBox.Text = info[i].Gosnomer;
                             ModelComboBox.Text = info[i].Model;
                             ColorComboBox.Text = info[i].Color;
                             NameTextBox.Text = info[i].FIO;
-                            IsVisibleData(true);
                         }
                     }
                 }
@@ -113,9 +108,9 @@ namespace Номера_машины
             {
                 if (IsCarNumber())
                 {
-                    //query = $"INSERT INTO CarInfo (Number, Model, Color, FIO) VALUES ('{number}', '{ModelComboBox.Text}', '{ColorComboBox.Text}', '{NameTextBox.Text}')";
-                    //command = new OleDbCommand(query, controller);
-                    //command.ExecuteNonQuery();
+                    query = $"INSERT INTO CarInfo ([Number], [Model], [Color], [FIO]) VALUES ('{number}', '{ModelComboBox.Text}', '{ColorComboBox.Text}', '{NameTextBox.Text}')";
+                    command = new OleDbCommand(query, controller);
+                    command.ExecuteNonQuery();
 
                     NumbersListBox.Items.Add(number);
                     info.Add(new Car(number,
@@ -136,14 +131,13 @@ namespace Номера_машины
                 {
                     if (number == info[i].Gosnomer)
                     {
-                        query = $"UPDATE CarInfo SET Model = '{ModelComboBox.Text}', Color = '{ColorComboBox.Text}', FIO = '{NameTextBox.Text}' WHERE Number = '{number}'";
-                        command = new OleDbCommand(query, controller);
-                        command.ExecuteNonQuery();
-
                         info[i].Model = ModelComboBox.Text;
                         info[i].Color = ColorComboBox.Text;
                         info[i].FIO = NameTextBox.Text;
-                        Clear();
+
+                        query = $"UPDATE CarInfo SET [Model] = '{info[i].Model}', [Color] = '{info[i].Color}', [FIO] = '{info[i].FIO}' WHERE Number = '{number}'";
+                        command = new OleDbCommand(query, controller);
+                        command.ExecuteNonQuery();
                     }
                 }
             }
@@ -171,13 +165,9 @@ namespace Номера_машины
                         command.ExecuteNonQuery();
 
                         info.Remove(info[i]);
-                        NumbersListBox.Items.Clear();
-                        foreach (var item in info)
-                        {
-                            NumbersListBox.Items.Add(item.Gosnomer);
-                        }
                     }
                 }
+                NumbersListBox.Items.Remove(NumbersListBox.Items[NumbersListBox.SelectedIndex]);
             }
             catch
             {
