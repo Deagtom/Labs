@@ -1,3 +1,8 @@
+using Номера_машины.Controllers;
+using System.Data.OleDb;
+using System.Reflection;
+using System.Drawing;
+
 namespace Номера_машины
 {
     public partial class Menu : Form
@@ -5,14 +10,46 @@ namespace Номера_машины
         public Menu()
         {
             InitializeComponent();
+            controller = new OleDbConnection(ConnectionString.Connection);
+            controller.Open();
+            Start();
             EnterOrChangeGomboBox.SelectedIndex = 0;
         }
 
+        private void Start()
+        {
+            int count;
+            command = new OleDbCommand(query, controller); 
+            count = int.Parse(command.ExecuteScalar().ToString());
+
+            for (int i = 1; i <= count; i++)
+            {
+                query = $"SELECT Number FROM CarInfo WHERE ID = {i}";
+                command = new OleDbCommand(query, controller);
+                NumbersListBox.Items.Add(command.ExecuteScalar() ?? "");
+            }
+
+            for (int i = 1; i <= count; i++)
+            {
+                query = $"SELECT Number, Model, Color, FIO FROM CarInfo WHERE ID = {i}";
+                command = new OleDbCommand(query, controller);
+                OleDbDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    info.Add(new Car(reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[3].ToString()));
+                }
+                reader.Close();
+            }
+        }
+
+
+        private OleDbCommand command;
+        private OleDbConnection controller;
         private Point lastPoint;
 
+        private string query = "SELECT count(*) FROM CarInfo";
         private string number = string.Empty;
-
-        List<Car> info = new List<Car>();
+        private List<Car> info = new List<Car>();
 
         private void IsVisibleData(bool enabled)
         {
@@ -60,6 +97,10 @@ namespace Номера_машины
             {
                 if (IsCarNumber())
                 {
+                    query = $"INSERT INTO CarInfo (Number, Model, Color, FIO) VALUES ('{number}', '{ModelComboBox.Text}', '{ColorComboBox.Text}', '{NameTextBox.Text}')";
+                    command = new OleDbCommand(query, controller);
+                    command.ExecuteNonQuery();
+
                     NumbersListBox.Items.Add(number);
                     info.Add(new Car(number,
                                      ModelComboBox.Text,
@@ -69,7 +110,7 @@ namespace Номера_машины
                 }
                 else
                 {
-                    MessageBox.Show("Введите номер правильно\n\nПример: х000хх");
+                    MessageBox.Show("Введите номер правильно\n\nПример: X000XX");
                     CarNumbersTextBox.Text = string.Empty;
                 }
             }
@@ -79,6 +120,10 @@ namespace Номера_машины
                 {
                     if (number == info[i].Gosnomer)
                     {
+                        query = $"UPDATE CarInfo SET Model = '{ModelComboBox.Text}', Color = '{ColorComboBox.Text}', FIO = '{NameTextBox.Text}' WHERE Number = '{number}'";
+                        command = new OleDbCommand(query, controller);
+                        command.ExecuteNonQuery();
+
                         info[i].Model = ModelComboBox.Text;
                         info[i].Color = ColorComboBox.Text;
                         info[i].FIO = NameTextBox.Text;
@@ -98,18 +143,29 @@ namespace Номера_машины
 
         private void Remove()
         {
-            number = NumbersListBox.SelectedItem.ToString() ?? "X000XX";
-            for (int i = 0; i < info.Count; i++)
+            try
             {
-                if (number == info[i].Gosnomer)
+                number = NumbersListBox.SelectedItem.ToString() ?? "X000XX";
+                for (int i = 0; i < info.Count; i++)
                 {
-                    info.Remove(info[i]);
-                    NumbersListBox.Items.Clear();
-                    foreach (var item in info)
+                    if (number == info[i].Gosnomer)
                     {
-                        NumbersListBox.Items.Add(item.Gosnomer);
+                        query = $"DELETE FROM CarInfo WHERE Number = '{number}'";
+                        command = new OleDbCommand(query, controller);
+                        command.ExecuteNonQuery();
+
+                        info.Remove(info[i]);
+                        NumbersListBox.Items.Clear();
+                        foreach (var item in info)
+                        {
+                            NumbersListBox.Items.Add(item.Gosnomer);
+                        }
                     }
                 }
+            }
+            catch
+            {
+                MessageBox.Show("Выберите номер");
             }
         }
 
@@ -186,6 +242,11 @@ namespace Номера_машины
         private void Background_MouseDown(object sender, MouseEventArgs e)
         {
             lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            controller.Close();
         }
     }
 }

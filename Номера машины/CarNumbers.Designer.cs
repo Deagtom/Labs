@@ -274,6 +274,7 @@
             this.Controls.Add(this.Background);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
             this.Background.ResumeLayout(false);
             this.Background.PerformLayout();
             this.InfoGroupBox.ResumeLayout(false);

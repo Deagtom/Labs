@@ -1,4 +1,4 @@
-﻿namespace Номера_машины
+﻿namespace Номера_машины.Controllers
 {
     internal class Car
     {
