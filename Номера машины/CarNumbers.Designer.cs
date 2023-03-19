@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.Background = new System.Windows.Forms.Panel();
-            this.EnterOrChangeGomboBox = new System.Windows.Forms.ComboBox();
             this.NumbersListBox = new System.Windows.Forms.ListBox();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.NumbersListLabel = new System.Windows.Forms.Label();
@@ -51,7 +50,6 @@
             // 
             // Background
             // 
-            this.Background.Controls.Add(this.EnterOrChangeGomboBox);
             this.Background.Controls.Add(this.NumbersListBox);
             this.Background.Controls.Add(this.DeleteButton);
             this.Background.Controls.Add(this.NumbersListLabel);
@@ -65,28 +63,14 @@
             this.Background.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Background_MouseDown);
             this.Background.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Background_MouseMove);
             // 
-            // EnterOrChangeGomboBox
-            // 
-            this.EnterOrChangeGomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.EnterOrChangeGomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.EnterOrChangeGomboBox.FormattingEnabled = true;
-            this.EnterOrChangeGomboBox.Items.AddRange(new object[] {
-            "Ввести данные",
-            "Изменить данные"});
-            this.EnterOrChangeGomboBox.Location = new System.Drawing.Point(31, 117);
-            this.EnterOrChangeGomboBox.Name = "EnterOrChangeGomboBox";
-            this.EnterOrChangeGomboBox.Size = new System.Drawing.Size(246, 33);
-            this.EnterOrChangeGomboBox.TabIndex = 11;
-            this.EnterOrChangeGomboBox.SelectedIndexChanged += new System.EventHandler(this.EnterOrChangeGomboBox_SelectedIndexChanged);
-            // 
             // NumbersListBox
             // 
             this.NumbersListBox.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.NumbersListBox.FormattingEnabled = true;
             this.NumbersListBox.ItemHeight = 25;
-            this.NumbersListBox.Location = new System.Drawing.Point(31, 151);
+            this.NumbersListBox.Location = new System.Drawing.Point(31, 126);
             this.NumbersListBox.Name = "NumbersListBox";
-            this.NumbersListBox.Size = new System.Drawing.Size(246, 329);
+            this.NumbersListBox.Size = new System.Drawing.Size(246, 354);
             this.NumbersListBox.TabIndex = 10;
             this.NumbersListBox.DoubleClick += new System.EventHandler(this.NumbersListBox_DoubleClick);
             // 
@@ -301,6 +285,5 @@
         private Label NumbersListLabel;
         private ComboBox ModelComboBox;
         private ListBox NumbersListBox;
-        private ComboBox EnterOrChangeGomboBox;
     }
 }

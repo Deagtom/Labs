@@ -11,35 +11,8 @@ namespace Номера_машины
             controller = new OleDbConnection(ConnectionString.Connection);
             controller.Open();
             Start();
-            EnterOrChangeGomboBox.SelectedIndex = 0;
+            ClearNullInListBox();
         }
-
-        private void Start()
-        {
-            int count;
-            command = new OleDbCommand(query, controller); 
-            count = int.Parse(command.ExecuteScalar().ToString());
-
-            for (int i = 1; i <= count; i++)
-            {
-                query = $"SELECT Number FROM CarInfo WHERE ID = {i}";
-                command = new OleDbCommand(query, controller);
-                NumbersListBox.Items.Add(command.ExecuteScalar() ?? "");
-            }
-
-            for (int i = 1; i <= count; i++)
-            {
-                query = $"SELECT Number, Model, Color, FIO FROM CarInfo WHERE ID = {i}";
-                command = new OleDbCommand(query, controller);
-                OleDbDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    info.Add(new Car(reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[3].ToString()));
-                }
-                reader.Close();
-            }
-        }
-
 
         private OleDbCommand command;
         private OleDbConnection controller;
@@ -52,6 +25,44 @@ namespace Номера_машины
         private void IsVisibleData(bool enabled)
         {
             InfoGroupBox.Visible = enabled;
+        }
+
+        private void Start()
+        {
+            int count;
+            command = new OleDbCommand(query, controller);
+            count = int.Parse(command.ExecuteScalar().ToString());
+
+            for (int i = 1; NumbersListBox.Items.Count <= count; i++)
+            {
+                ClearNullInListBox();
+                query = $"SELECT Number FROM CarInfo WHERE ID = {i}";
+                command = new OleDbCommand(query, controller);
+                NumbersListBox.Items.Add(command.ExecuteScalar() ?? "");
+            }
+
+            for (int i = 1; i <= NumbersListBox.Items.Count + 1; i++)
+            {
+                query = $"SELECT Number, Model, Color, FIO FROM CarInfo WHERE ID = {i}";
+                command = new OleDbCommand(query, controller);
+                OleDbDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    info.Add(new Car(reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[3].ToString()));
+                }
+                reader.Close();
+            }
+        }
+
+        private void ClearNullInListBox()
+        {
+            for (int i = 0; i < NumbersListBox.Items.Count; i++)
+            {
+                if (NumbersListBox.Items[i].ToString() == string.Empty)
+                {
+                    NumbersListBox.Items.Remove(NumbersListBox.Items[i]);
+                }
+            }
         }
 
         private bool IsCarNumber()
@@ -71,20 +82,27 @@ namespace Номера_машины
 
         private void NumbersListBox_DoubleClick(object sender, EventArgs e)
         {
-            if (NumbersListBox.Items.Count > 0)
+            try
             {
-                number = NumbersListBox.SelectedItem.ToString() ?? "X000XX";
-                for (int i = 0; i < info.Count; i++)
+                if (NumbersListBox.Items.Count > 0)
                 {
-                    if (number == info[i].Gosnomer)
+                    number = NumbersListBox.SelectedItem.ToString() ?? "X000XX";
+                    for (int i = 0; i < info.Count; i++)
                     {
-                        CarNumbersTextBox.Text = info[i].Gosnomer;
-                        ModelComboBox.Text = info[i].Model;
-                        ColorComboBox.Text = info[i].Color;
-                        NameTextBox.Text = info[i].FIO;
-                        IsVisibleData(true);
+                        if (number == info[i].Gosnomer)
+                        {
+                            CarNumbersTextBox.Text = info[i].Gosnomer;
+                            ModelComboBox.Text = info[i].Model;
+                            ColorComboBox.Text = info[i].Color;
+                            NameTextBox.Text = info[i].FIO;
+                            IsVisibleData(true);
+                        }
                     }
                 }
+            }
+            catch
+            {
+                MessageBox.Show("Выберите номер");
             }
         }
 
@@ -95,9 +113,9 @@ namespace Номера_машины
             {
                 if (IsCarNumber())
                 {
-                    query = $"INSERT INTO CarInfo (Number, Model, Color, FIO) VALUES ('{number}', '{ModelComboBox.Text}', '{ColorComboBox.Text}', '{NameTextBox.Text}')";
-                    command = new OleDbCommand(query, controller);
-                    command.ExecuteNonQuery();
+                    //query = $"INSERT INTO CarInfo (Number, Model, Color, FIO) VALUES ('{number}', '{ModelComboBox.Text}', '{ColorComboBox.Text}', '{NameTextBox.Text}')";
+                    //command = new OleDbCommand(query, controller);
+                    //command.ExecuteNonQuery();
 
                     NumbersListBox.Items.Add(number);
                     info.Add(new Car(number,
@@ -167,42 +185,22 @@ namespace Номера_машины
             }
         }
 
-        private void EnterOrChangeGomboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (EnterOrChangeGomboBox.SelectedIndex)
-            {
-                case 0:
-                    {
-                        IsVisibleData(true);
-                        break;
-                    }
-                case 1:
-                    {
-                        IsVisibleData(false);
-                        break;
-                    }
-            }
-        }
-
         private void CarNumbersTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 Save();
-                EnterOrChangeGomboBox.SelectedIndex = 1;
             }
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
             Save();
-            EnterOrChangeGomboBox.SelectedIndex = 1;
         }
 
         private void ResetButton_Click(object sender, EventArgs e)
         {
             Clear();
-            EnterOrChangeGomboBox.SelectedIndex = 0;
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
