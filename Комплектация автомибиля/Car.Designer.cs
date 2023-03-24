@@ -196,6 +196,7 @@
             // Model
             // 
             this.Model.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Model.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Model.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Model.FormattingEnabled = true;
             this.Model.Items.AddRange(new object[] {

@@ -116,6 +116,7 @@
             // 
             // Material
             // 
+            this.Material.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Material.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Material.FormattingEnabled = true;
             this.Material.Items.AddRange(new object[] {
@@ -137,11 +138,11 @@
             this.MaterialLabel.TabIndex = 9;
             this.MaterialLabel.Text = "Материал";
             // 
-            // Height
+            // HeightValue
             // 
             this.HeightValue.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.HeightValue.Location = new System.Drawing.Point(201, 209);
-            this.HeightValue.Name = "Height";
+            this.HeightValue.Name = "HeightValue";
             this.HeightValue.Size = new System.Drawing.Size(172, 43);
             this.HeightValue.TabIndex = 8;
             // 
@@ -155,11 +156,11 @@
             this.HeightLabel.TabIndex = 7;
             this.HeightLabel.Text = "Высота (см)";
             // 
-            // Width
+            // WidthValue
             // 
             this.WidthValue.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.WidthValue.Location = new System.Drawing.Point(201, 142);
-            this.WidthValue.Name = "Width";
+            this.WidthValue.Name = "WidthValue";
             this.WidthValue.Size = new System.Drawing.Size(172, 43);
             this.WidthValue.TabIndex = 6;
             // 
