@@ -37,6 +37,14 @@ namespace Простые_сомножители
                     }
                 }
                 Factors.Text = Factors.Text.Remove(Factors.Text.Length - 3);
+                var arr = Factors.Text.Split(" * ");
+                var list = new List<string>();
+                foreach (var grp in arr.GroupBy(item => item))
+                {
+                    var count = grp.Count();
+                    list.Add(count < 2 ? $"{grp.Key}" : $"{grp.Key}^{count}");
+                }
+                Factors.Text = string.Join(" * ", list);
             }
             catch
             {
