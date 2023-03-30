@@ -10,14 +10,14 @@ namespace Жалюзи
 
         private Point lastPoint;
 
-        private const uint MATERIAL_ALUMINUM_PRICE = 3,
-                           MATERIAL_IRON_PRICE = 4,
-                           MATERIAL_PLASTIC_PRICE = 2;
+        private const uint MaterialAluminumPrice = 3,
+                           MaterialIronPrice = 4,
+                           MaterialPlasticPrice = 2;
 
-        private const uint TYPE_HORIZONTAL_PRICE = 2,
-                           TYPE_VERTICAL_PRICE = 3,
-                           TYPE_ROLLED_PRICE = 4,
-                           TYPE_MOSAIC_PRICE = 5;
+        private const uint TypeHorizontalPrice = 2,
+                           TypeVerticalPrice = 3,
+                           TypeRolledPrice = 4,
+                           TypeMosaicPrice = 5;
 
         private void BaseStart()
         {
@@ -32,15 +32,15 @@ namespace Жалюзи
             string result = string.Empty;
             if (Material.SelectedIndex == 0)
             {
-                result = Convert.ToString(uint.Parse(WidthValue.Text) * uint.Parse(HeightValue.Text) * Type * MATERIAL_ALUMINUM_PRICE) + "₽";
+                result = Convert.ToString(uint.Parse(WidthValue.Text) * uint.Parse(HeightValue.Text) * Type * MaterialAluminumPrice) + "₽";
             }
             else if (Material.SelectedIndex == 1)
             {
-                result = Convert.ToString(uint.Parse(WidthValue.Text) * uint.Parse(HeightValue.Text) * Type * MATERIAL_IRON_PRICE) + "₽";
+                result = Convert.ToString(uint.Parse(WidthValue.Text) * uint.Parse(HeightValue.Text) * Type * MaterialIronPrice) + "₽";
             }
             else if (Material.SelectedIndex == 2)
             {
-                result = Convert.ToString(uint.Parse(WidthValue.Text) * uint.Parse(HeightValue.Text) * Type * MATERIAL_PLASTIC_PRICE) + "₽";
+                result = Convert.ToString(uint.Parse(WidthValue.Text) * uint.Parse(HeightValue.Text) * Type * MaterialPlasticPrice) + "₽";
             }
             return result;
         }
@@ -51,19 +51,19 @@ namespace Жалюзи
             {
                 if (TypeHorizontal.Checked)
                 {
-                    Price.Text = BlindsPrice(TYPE_HORIZONTAL_PRICE);
+                    Price.Text = BlindsPrice(TypeHorizontalPrice);
                 }
                 else if (TypeVertical.Checked)
                 {
-                    Price.Text = BlindsPrice(TYPE_VERTICAL_PRICE);
+                    Price.Text = BlindsPrice(TypeVerticalPrice);
                 }
                 else if (TypeRolled.Checked)
                 {
-                    Price.Text = BlindsPrice(TYPE_ROLLED_PRICE);
+                    Price.Text = BlindsPrice(TypeRolledPrice);
                 }
                 else if (TypeMosaic.Checked)
                 {
-                    Price.Text = BlindsPrice(TYPE_MOSAIC_PRICE);
+                    Price.Text = BlindsPrice(TypeMosaicPrice);
                 }
             }
             catch

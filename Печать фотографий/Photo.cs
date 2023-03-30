@@ -10,14 +10,14 @@ namespace Печать_фотографий
 
         private Point lastPoint;
 
-        private const uint TYPE_BLACK_WHITE_PRICE = 5,
-                           TYPE_COLORED_PRICE = 15,
-                           TYPE_NEGATIV_PRICE = 10;
+        private const uint TypeBlackWhitePrice = 5,
+                           TypeColoredPrice = 15,
+                           TypeNegativPrice = 10;
 
-        private const uint SIZE_3X4_PRICE = 7,
-                           SIZE_9X12_PRICE = 21,
-                           SIZE_12X15_PRICE = 27,
-                           SIZE_18X24_PRICE = 42;
+        private const uint Size3x4Price = 7,
+                           Size9x12Price = 21,
+                           Size12x15Price = 27,
+                           Size18x24Price = 42;
 
         private void BaseStart()
         {
@@ -31,15 +31,15 @@ namespace Печать_фотографий
             string result = string.Empty;
             if (TypeBlackWhite.Checked)
             {
-                result = Convert.ToString(uint.Parse(Count.Text) * Size * TYPE_BLACK_WHITE_PRICE) + "₽";
+                result = Convert.ToString(uint.Parse(Count.Text) * Size * TypeBlackWhitePrice) + "₽";
             }
             else if (TypeColored.Checked)
             {
-                result = Convert.ToString(uint.Parse(Count.Text) * Size * TYPE_COLORED_PRICE) + "₽";
+                result = Convert.ToString(uint.Parse(Count.Text) * Size * TypeColoredPrice) + "₽";
             }
             else if (TypeNegative.Checked)
             {
-                result = Convert.ToString(uint.Parse(Count.Text) * Size * TYPE_NEGATIV_PRICE) + "₽";
+                result = Convert.ToString(uint.Parse(Count.Text) * Size * TypeNegativPrice) + "₽";
             }
             return result;
         }
@@ -50,19 +50,19 @@ namespace Печать_фотографий
             {
                 if (Size3x4.Checked)
                 {
-                    Price.Text = PricePhoto(SIZE_3X4_PRICE);
+                    Price.Text = PricePhoto(Size3x4Price);
                 }
                 else if (Size9x12.Checked)
                 {
-                    Price.Text = PricePhoto(SIZE_9X12_PRICE);
+                    Price.Text = PricePhoto(Size9x12Price);
                 }
                 else if (Size12x15.Checked)
                 {
-                    Price.Text = PricePhoto(SIZE_12X15_PRICE);
+                    Price.Text = PricePhoto(Size12x15Price);
                 }
                 else if (Size18x24.Checked)
                 {
-                    Price.Text = PricePhoto(SIZE_18X24_PRICE);
+                    Price.Text = PricePhoto(Size18x24Price);
                 }
             }
             catch

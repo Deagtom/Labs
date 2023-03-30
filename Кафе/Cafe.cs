@@ -12,28 +12,28 @@ namespace Кафе
 
         private uint price = 0;
 
-        private const uint FOOD_BIG_MAC_PRICE = 165,
-                           FOOD_SAUSE_PRICE = 32,
-                           FOOD_BACON_PRICE = 65,
-                           FOOD_POTATO_PRICE = 85;
+        private const uint FoodBigMacPrice = 165,
+                           FoodSausePrice = 32,
+                           FoodBaconPrice = 65,
+                           FoodPotatoPrice = 85;
 
         private string FoodPrice(uint Price)
         {
             if (FoodBigMac.Checked)
             {
-                Price += FOOD_BIG_MAC_PRICE;
+                Price += FoodBigMacPrice;
             }
             if (FoodSause.Checked)
             {
-                Price += FOOD_SAUSE_PRICE;
+                Price += FoodSausePrice;
             }
             if (FoodBacon.Checked)
             {
-                Price += FOOD_BACON_PRICE;
+                Price += FoodBaconPrice;
             }
             if (FoodPotato.Checked)
             {
-                Price += FOOD_POTATO_PRICE;
+                Price += FoodPotatoPrice;
             }
             return Convert.ToString(Price) + "₽";
         }

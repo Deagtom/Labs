@@ -13,14 +13,14 @@ namespace Комплектация_автомибиля
 
         private Point lastPoint;
 
-        private const uint KIA_PRICE = 1650000,
-                           BMW_PRICE = 6200000,
-                           MERCEDES_PRICE = 8500000;
+        private const uint KiaPrice = 1650000,
+                           BmwPrice = 6200000,
+                           MercedesPrice = 8500000;
 
-        private const float OPTION_ABC_PRICE = 0.13f,
-                            OPTION_FOG_LIGHTS_PRICE = 0.05f,
-                            OPTION_PARKTRONIK_PRICE = 0.11f,
-                            OPTION_LEATHER_INTERIOR_PRICE = 0.18f;
+        private const float OptionAbcPrice = 0.13f,
+                            OptionFogLightsPrice = 0.05f,
+                            OptionParktronikPrice = 0.11f,
+                            OptionLeatherInteriorPrice = 0.18f;
 
         private void BaseStart()
         {
@@ -36,19 +36,19 @@ namespace Комплектация_автомибиля
             double result = Price;
             if (OptionABC.Checked)
             {
-                result += Price * OPTION_ABC_PRICE;
+                result += Price * OptionAbcPrice;
             }
             if (OptionFogLights.Checked)
             {
-                result += Price * OPTION_FOG_LIGHTS_PRICE;
+                result += Price * OptionFogLightsPrice;
             }
             if (OptionParktronik.Checked)
             {
-                result += Price * OPTION_PARKTRONIK_PRICE;
+                result += Price * OptionParktronikPrice;
             }
             if (OptionLeatherInterior.Checked)
             {
-                result += Price * OPTION_LEATHER_INTERIOR_PRICE;
+                result += Price * OptionLeatherInteriorPrice;
             }
             return Convert.ToString(Math.Round(result, 0)) + "₽";
         }
@@ -57,15 +57,15 @@ namespace Комплектация_автомибиля
         {
             if (Model.SelectedIndex == 0)
             {
-                Price.Text = CarPrice(KIA_PRICE);
+                Price.Text = CarPrice(KiaPrice);
             }
             else if (Model.SelectedIndex == 1)
             {
-                Price.Text = CarPrice(BMW_PRICE);
+                Price.Text = CarPrice(BmwPrice);
             }
             else if (Model.SelectedIndex == 2)
             {
-                Price.Text = CarPrice(MERCEDES_PRICE);
+                Price.Text = CarPrice(MercedesPrice);
             }
         }
 
@@ -76,19 +76,19 @@ namespace Комплектация_автомибиля
                 case 0:
                     {
                         ModelPicture.Image = Resources.Kia_Rio;
-                        BasePrice.Text = Convert.ToString(KIA_PRICE) + "₽";
+                        BasePrice.Text = Convert.ToString(KiaPrice) + "₽";
                         break;
                     }
                 case 1:
                     {
                         ModelPicture.Image = Resources.BMW_M5;
-                        BasePrice.Text = Convert.ToString(BMW_PRICE) + "₽";
+                        BasePrice.Text = Convert.ToString(BmwPrice) + "₽";
                         break;
                     }
                 case 2:
                     {
                         ModelPicture.Image = Resources.Mercedes_AMG_GT;
-                        BasePrice.Text = Convert.ToString(MERCEDES_PRICE) + "₽";
+                        BasePrice.Text = Convert.ToString(MercedesPrice) + "₽";
                         break;
                     }
             }
